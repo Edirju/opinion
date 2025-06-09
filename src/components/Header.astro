@@ -1,9 +1,91 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import Logo from "../icons/Logo.astro";
+import { SITE_TITLE } from "../consts";
 ---
 
-<header>
+<header
+  class="font-[family-name:var(--body)] text-[rgb(var(--light),0.65)] sticky top-4 z-20 bg-[rgb(var(--primary),0.10)] backdrop-blur-md backdrop-saturate-150 shadow-[0_0_15px_rgb(var(--primary),0.20)] border border-[rgb(var(--primary),0.05)] rounded-md max-w-[700px] px-4 py-2 flex flex-row flex-wrap items-center justify-between md:mx-auto mx-4 mb-[38px] md:mb-[72px] bg-linear-to-br from-[rgb(var(--primary),0.10)] via-[rgb(var(--accent),0.10)] to-[rgb(var(--secondary),0.10)]"
+>
+  <a
+    href="/"
+    class="logo flex items-center transition-all duration-300 ease-in-out text-[rgb(var(--primary),0.85)] hover:text-[rgb(var(--light),0.85)] hover:text-shadow-[0_0_8px_rgb(var(--primary),0.85)]"
+  >
+    <figure
+      class="hover:shadow-[0_0_8px_rgb(var(--primary),0.25)] rounded-full"
+    >
+      <Logo />
+    </figure>
+    <h2 class="text-2xl font-bold tracking-tighter ml-0.5">dinson.</h2>
+  </a>
+  <nav class="flex flex-wrap items-center justify-center gap-2">
+    <HeaderLink href="/blog">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        class="size-5"
+        viewBox="0 0 24 24"
+        style="fill: currentColor;transform: ;msFilter:;"
+        ><path
+          d="M19.875 3H4.125C2.953 3 2 3.897 2 5v14c0 1.103.953 2 2.125 2h15.75C21.047 21 22 20.103 22 19V5c0-1.103-.953-2-2.125-2zm0 16H4.125c-.057 0-.096-.016-.113-.016-.007 0-.011.002-.012.008L3.988 5.046c.007-.01.052-.046.137-.046h15.75c.079.001.122.028.125.008l.012 13.946c-.007.01-.052.046-.137.046z"
+        ></path><path d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z"
+        ></path></svg
+      >
+      <span class="text-sm font-light uppercase tracking-tight hidden md:block"
+        >Blog</span
+      >
+    </HeaderLink>
+    <HeaderLink href="/projects">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        class="size-5"
+        viewBox="0 0 24 24"
+        style="fill: currentColor;transform: ;msFilter:;"
+        ><path
+          d="M20 6c0-2.168-3.663-4-8-4S4 3.832 4 6v2c0 2.168 3.663 4 8 4s8-1.832 8-4V6zm-8 13c-4.337 0-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3c0 2.168-3.663 4-8 4z"
+        ></path><path
+          d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z"
+        ></path></svg
+      >
+      <span class="text-sm font-light uppercase tracking-tight hidden md:block"
+        >Proyectos</span
+      >
+    </HeaderLink>
+    <HeaderLink href="/resume">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        class="size-5"
+        viewBox="0 0 24 24"
+        style="fill: currentColor;transform: ;msFilter:;"
+        ><path
+          d="M19 2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h4l3 3 3-3h4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-7 3c1.727 0 3 1.272 3 3s-1.273 3-3 3c-1.726 0-3-1.272-3-3s1.274-3 3-3zM7.177 16c.558-1.723 2.496-3 4.823-3s4.266 1.277 4.823 3H7.177z"
+        ></path></svg
+      >
+      <span class="text-sm font-light uppercase tracking-tight hidden md:block"
+        >Resume</span
+      >
+    </HeaderLink>
+  </nav>
+</header>
+
+<!-- <style>
+  header {
+    background-image: linear-gradient(
+      to right bottom,
+      #f09146,
+      #dd7935,
+      #c96124,
+      #b64914,
+      #a23004
+    );
+  }
+</style> -->
+<!-- <header>
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
@@ -82,4 +164,4 @@ import { SITE_TITLE } from '../consts';
 			display: none;
 		}
 	}
-</style>
+</style> -->

@@ -1,0 +1,152 @@
+---
+import Section from "../Section.astro";
+import Spreadsheet from "../../icons/Spreadsheet.astro";
+import Left from "../../icons/Left.astro";
+import Right from "../../icons/Right.astro";
+
+import FormattedDate from "../FormattedDate.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+// Opcional: Limitar número de posts a mostrar.
+const postsToShow = posts.slice(0, 5);
+// Si no hay: No renderizar o mostrar mensaje
+if (postsToShow.length === 0) {
+  return null;
+}
+---
+
+<Section>
+  <header
+    class="flex flex-col gap-2 text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)]"
+  >
+    <h2
+      class="flex items-center gap-1 capitalize font-bold text-pretty tracking-tight text-[clamp(1.125rem,1.0909rem_+_0.1818vw,1.25rem)]"
+    >
+      <Spreadsheet /><span class="font-extralight opacity-45">|</span> Publicaciones
+      recientes:
+    </h2>
+    <p
+      class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.45)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
+    >
+      Los pequeños detalles marcan una gran diferencia. Con los años he
+      aprendido a fijarme en esos detalles. <strong>Aprender++</strong>.
+    </p>
+  </header>
+
+  <article
+    class="blog-slider-container mt-6 font-[family-name:var(--body)] text-[rgb(var(--light),0.65)] flex flex-col gap-4 p-4 bg-linear-to-tr from-[rgb(var(--secondary),0.45)] via-[rgb(var(--dark),0.45)] to-[rgb(var(--black),0.45)] border border-[rgb(var(--primary),0.1)] shadow-[0_4px_30px_rgb(var(--primary),0.08)] rounded-xl"
+  >
+    <div
+      class="slider-wrapper flex overflow-auto scroll-smooth snap-x-[mandatory]"
+      id="blogSliderWrapper"
+    >
+      {
+        postsToShow.map((post) => (
+          <div class="slide flex-[0_0_100%] snap-start box-border py-0 px-1">
+            <a
+              href={`/blog/${post.id}/`}
+              class="slide-link flex gap-2 flex-col-reverse md:flex-row"
+            >
+              <div class="slide-content flex flex-col gap-4 md:w-1/2">
+                <div class="text-title flex items-center gap-4">
+                  <h3 class="slide-title font-medium text-xl text-pretty line-clamp-1 tracking-tighter text-[rgb(var(--light),0.55)] w-fit leading-tight relative text-shadow-[0_0_8px_rgb(var(--accent),0.65)] hover:text-[rgb(var(--primary),0.65)]">
+                    {post.data.title}
+                  </h3>
+                  <time class="slide-date border border-[rgb(var(--primary),0.25)] rounded px-1 text-xs uppercase tracking-tighter text-[rgb(var(--light),0.35)] bg-[rgb(var(--accent),0.20)] font-[family-name:var(--mono)] text-nowrap">
+                    <FormattedDate date={post.data.pubDate} />
+                  </time>
+                </div>
+                <p class="font-extralight text-balance text-[rgb(var(--light),0.35)] tracking-wide leading-tight text-sm">
+                  {post.data.description}
+                </p>
+              </div>
+              <figure class="md:w-1/2 aspect-auto object-cover">
+                {post.data.heroImage && (
+                  <Image
+                    width={720}
+                    height={360}
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                    class='rounded-md'
+                  />
+                )}
+              </figure>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+    <div class="slider-navigation flex items-center justify-between mt-3 px-6">
+      <button
+        aria-label="Previous slide"
+        id="prevBtn"
+        class="nav-button pointer-events-auto text-[rgb(var(--primary),0.85)] rounded-full border-2 border-[rgb(var(--primary),0.25)] size-8 bg-linear-to-br from-[rgb(var(--secondary))] via-[rgb(var(--dark))] to-[rgb(var(--black))] cursor-pointer hover:opacity-65 disabled:opacity-50 disabled:cursor-not-allowed"
+        ><Left /></button
+      >
+      <button
+        aria-label="Next slide"
+        id="nextBtn"
+        class="nav-button pointer-events-auto text-[rgb(var(--primary),0.85)] rounded-full border-2 border-[rgb(var(--primary),0.25)] size-8 bg-linear-to-br from-[rgb(var(--secondary))] via-[rgb(var(--dark))] to-[rgb(var(--black))] cursor-pointer hover:opacity-65 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+        ><Right /></button
+      >
+    </div>
+  </article>
+</Section>
+
+<style>
+  .slider-wrapper::-webkit-scrollbar {
+    /* WebKit */
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sliderWrapper = document.getElementById(
+      "blogSliderWrapper"
+    ) as HTMLElement | null;
+    const prevBtn = document.getElementById(
+      "prevBtn"
+    ) as HTMLButtonElement | null;
+    const nextBtn = document.getElementById(
+      "nextBtn"
+    ) as HTMLButtonElement | null;
+
+    if (!sliderWrapper || !prevBtn || !nextBtn) {
+      console.warn("Slider elements not found.");
+      return;
+    }
+
+    const scrollAmount = () => {
+      return sliderWrapper.offsetWidth;
+    };
+
+    const updateButtonStates = () => {
+      if (!sliderWrapper || !prevBtn || !nextBtn) return;
+
+      const currentScroll = sliderWrapper.scrollLeft;
+      const maxScroll = sliderWrapper.scrollWidth - sliderWrapper.clientWidth;
+
+      prevBtn.disabled = currentScroll <= 0;
+      nextBtn.disabled = currentScroll >= maxScroll - 1;
+    };
+
+    prevBtn.addEventListener("click", () => {
+      sliderWrapper.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
+    });
+    nextBtn.addEventListener("click", () => {
+      sliderWrapper.scrollBy({ left: scrollAmount(), behavior: "smooth" });
+    });
+    sliderWrapper.addEventListener("scroll", updateButtonStates);
+    updateButtonStates();
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(updateButtonStates, 100);
+    });
+  });
+</script>

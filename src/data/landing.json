@@ -1,0 +1,456 @@
+{
+  "basics": {
+    "name": "Edinson Rivera Jurado",
+    "label": "Ingeniero de Sistemas con intereses en desarrollo web y marketing digital con +5 años de experiencia & Creador de Contenido de Programación.",
+    "image": "/metoo.webp",
+    "email": "edirju@gmail.com",
+    "phone": "+57 3128288647",
+    "url": "https://edinson-rivera-devweb.vercel.app/",
+    "summary": "+5 años de experiencia como Desarrollador Web | Community Manager. Actualmente soy freelance & creador de Contenido sobre Programación. Vivo en Cali, Colombia. He trabajado en diferentes entornos: desde desarrollador hasta gestionar redes sociales de empresas multinacionales.",
+    "location": {
+      "address": "",
+      "postalCode": "760023",
+      "city": "Santiago de Cali",
+      "countryCode": "CO",
+      "region": "Colombia"
+    },
+    "profiles": [
+      {
+        "network": "Linkedin",
+        "username": "Edinson Rivera Jurado",
+        "url": "https://www.linkedin.com/in/edinson-rivera-jurado/"
+      },
+      {
+        "network": "Github",
+        "username": "Edirju | Edinson Rivera",
+        "url": "https://github.com/Edirju"
+      },
+      {
+        "network": "Bluesky",
+        "username": "Edirju | Edinson Rivera",
+        "url": "https://bsky.app/profile/edinsonrivera.bsky.social"
+      },
+      {
+        "network": "Instagram",
+        "username": "Edirju | Edinson Rivera",
+        "url": "https://www.instagram.com/edirju/"
+      },
+      {
+        "network": "Threads",
+        "username": "Edirju | Edinson Rivera",
+        "url": "https://www.threads.net/@edirju"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "midudev",
+      "position": "Divulgador sobre Programación Web",
+      "url": "https://twitch.tv/midudev",
+      "startDate": "2021-01-01",
+      "endDate": null,
+      "summary": "Streamer de programación más visto en Español en Twitch. +1 millón de seguidores entre todas mis redes sociales. Reconocido por Google, Microsoft y GitHub por mi impacto en la comunidad de desarrolladores.",
+      "highlights": ["Started the company"]
+    },
+    {
+      "name": "Adevinta",
+      "position": "Lead Frontend Architect",
+      "url": "https://twitch.tv/midudev",
+      "startDate": "2016-06-01",
+      "endDate": "2022-09-01",
+      "summary": "Lideré una convergencia técnica entre diferentes productos y migramos una arquitectura monolítica a otra más flexible y optimizada. Fomenté buenas prácticas y mejoras en la cultura de rendimiento, además de la entrega rápida de valor a los usuarios.",
+      "highlights": ["Started the company"]
+    },
+    {
+      "name": "Hubii",
+      "position": "Senior FrontEnd Developer",
+      "startDate": "2011-03-01",
+      "endDate": "2016-05-01",
+      "summary": "Desarrollé una plataforma de noticias geolocalizadas y una API para consumir la información. Escalé los servicios para soportar la carga de más de cientos de miles de peticiones al día. Recorté los tiempos de entrega y despliegues a producción a la mitad. Colaboré con Mozilla y Telefonica para desarrollar la primera app para televisores con FirefoxOS.",
+      "highlights": ["Started the company"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universitat Oberta de Catalunya",
+      "url": "https://www.uoc.edu/portal/es/index.html",
+      "area": "Ingeniero de Software",
+      "studyType": "Bachelor",
+      "startDate": "2003-01-01",
+      "endDate": "2009-01-01",
+      "score": "4.0",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Master",
+      "keywords": ["Desarrollo Web", "Frontend"]
+    },
+    {
+      "name": "Css3",
+      "level": "Master",
+      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+    },
+    {
+      "name": "Javascript",
+      "level": "Master",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "Tailwindcss",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "CSS Framework",
+        "Diseño Responsive"
+      ]
+    },
+    {
+      "name": "Typescript",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
+      ]
+    },
+    {
+      "name": "Node",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
+    },
+    {
+      "name": "Mysql",
+      "level": "Avanzado",
+      "keywords": [
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name": "Git",
+      "level": "Avanzado",
+      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
+    },
+    {
+      "name": "Github",
+      "level": "Avanzado",
+      "keywords": [
+        "Control de Versiones",
+        "Colaboración",
+        "Código Fuente",
+        "Git"
+      ]
+    },
+    {
+      "name": "Next",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "React Framework",
+        "SSR",
+        "Static Generation"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Python",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Bootstrap",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Astrojs",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Vite",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Figma",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Slack",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Notion",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Hubspot",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Gumroad",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Googleads",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Googlegemini",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Googleanalytics",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Openai",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Meta",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Blogger",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Advanced"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Bunny Game con CSS",
+      "isActive": true,
+      "description": "Juego de atrapa conejitos en CSS.",
+      "highlights": ["Html5", "Css3"],
+      "url": "https://bunny-game-incss.netlify.app/",
+      "github": "https://github.com/Edirju/Bunny-Game-inCSS",
+      "skill": "Css3"
+    },
+    {
+      "name": "Calculadora de Edad",
+      "isActive": true,
+      "description": "Aplicación para calcular la edad exacta",
+      "highlights": ["Css3", "Html5", "Javascript"],
+      "url": "https://calculadora-age.netlify.app/",
+      "github": "https://github.com/Edirju/age-calculator-app-main",
+      "skill": "Javascript"
+    },
+    {
+      "name": "Web Panel de Productos",
+      "isActive": true,
+      "description": "Panel web para mostrar productos como un sitio web",
+      "highlights": ["Html5", "Css3"],
+      "url": "https://web-basica-productos.netlify.app/",
+      "github": "https://github.com/Edirju/web-basic",
+      "skill": "Html5"
+    },
+    {
+      "name": "Baby Yoda",
+      "isActive": true,
+      "description": "Dibujo en CSS de un personaje de ficción",
+      "highlights": ["Css3", "Html5"],
+      "url": "https://baby-yoda-ten.vercel.app/",
+      "github": "https://github.com/Edirju/baby-yoda",
+      "skill": "Css3"
+    },
+    {
+      "name": "Piedra, Papel y Tijera AppGame",
+      "isActive": true,
+      "description": "Aplicacion que permite jugar el clásico piedra, papel y tijera",
+      "highlights": ["Javascript", "Html5", "Css3"],
+      "url": "https://piedra-papel-tijera-juego-app.netlify.app/",
+      "github": "https://github.com/Edirju/piedra-papel-o-tijera",
+      "skill": "Javascript"
+    },
+    {
+      "name": "Pókedex Api App",
+      "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
+      "highlights": ["Javascript", "Html5", "Css3"],
+      "url": "https://pokedex-cool-database.netlify.app/",
+      "github": "https://github.com/Edirju/pokedex_api",
+      "skill": "Javascript"
+    },
+    {
+      "name": "Binary converter App",
+      "description": "Aplicación que permite convertir números decimales en binarios",
+      "highlights": ["Html5", "Css3", "Javascript"],
+      "url": "https://convertidor-decimal-a-binario.netlify.app/",
+      "github": "https://github.com/Edirju/binary-converter",
+      "skill": "Javascript"
+    },
+    {
+      "name": "Reproductor de Música",
+      "description": "Aplicación que permite la reproduccion de audios.",
+      "highlights": ["Html5", "Css3", "Javascript"],
+      "url": "https://basic-music-player-app.netlify.app/",
+      "github": "https://github.com/Edirju/musisc_player",
+      "skill": "Javascript"
+    },
+    {
+      "name": "Palindrome App",
+      "description": "App que permite validar palabras o frases si son palíndromos.",
+      "highlights": ["Html5", "Css3", "Javascript"],
+      "url": "https://palindromo-validador.netlify.app/",
+      "github": "https://github.com/Edirju/project_palindrome",
+      "skill": "Javascript"
+    },
+    {
+      "name": "The TODO List App",
+      "description": "Aplicacion que permite listar tareas pendientes",
+      "highlights": ["Html5", "Css3", "Javascript"],
+      "url": "https://todolist-javascript-app.netlify.app/",
+      "github": "https://github.com/Edirju/toDo_app",
+      "skill": "Javascript"
+    },
+    {
+      "name": "Spotify Clone",
+      "isActive": true,
+      "description": "Proyecto de programacion que emula un entorno basico al estilo de Spotify",
+      "highlights": ["Astrojs", "React", "Tailwindcss"],
+      "url": "https://spotify-clone-project-beta.vercel.app/",
+      "github": "https://github.com/Edirju/spotify-clone",
+      "skill": "AstroIcon"
+    },
+    {
+      "name": "Retro Blog",
+      "isActive": false,
+      "description": "Blog con un diseño retro",
+      "highlights": ["Astrojs", "Html5", "Css3", "Javascript"],
+      "url": "https://astro-retro-blog.vercel.app/",
+      "github": "https://github.com/Edirju/astro-retro-blog",
+      "skill": "AstroIcon"
+    },
+    {
+      "name": "Mis Tareas App",
+      "isActive": false,
+      "description": "Aplicación en react para monitorear tareas con funcionalidades de agregar, eliminar, completar, almacenar información.",
+      "highlights": ["React", "Javascript", "Tailwindcss"],
+      "url": "https://mis-tareas-app-sooty.vercel.app/",
+      "github": "https://github.com/Edirju/react-todo-app",
+      "skill": "React"
+    },
+    {
+      "name": "Aplicación de Clima",
+      "isActive": true,
+      "description": "Aplicación que consulta el clima de una ciudad en tiempo real a traves de una api",
+      "highlights": ["React", "Vite", "Javascript", "Html5", "Css3"],
+      "url": "https://the-clima-app.vercel.app/",
+      "github": "https://github.com/Edirju/clima-app",
+      "skill": "React"
+    },
+    {
+      "name": "SunnySide Agency Web",
+      "description": "Plantilla de una landing de una agencia",
+      "highlights": ["React", "Css3", "Vite", "Javascript", "Html5"],
+      "url": "https://sunnyside-agency-landingpage-cyan.vercel.app/",
+      "github": "https://github.com/Edirju/sunnyside_agency_landingpage",
+      "skill": "Vite"
+    },
+    {
+      "name": "Busca Películas App",
+      "description": "Aplicacion que permite la búsqueda de peliculas a traves del uso de una Api.",
+      "highlights": ["React", "Css3", "Vite", "Javascript"],
+      "url": "https://app-busca-peliculas.vercel.app/",
+      "github": "https://github.com/Edirju/app-busca-peliculas",
+      "skill": "React"
+    },
+    {
+      "name": "Lista de Tareas ",
+      "description": "Aplicacion de listas de tareas pendientes ('Todos').",
+      "highlights": ["React", "Css3", "Vite", "Html5", "Javascript"],
+      "url": "https://to-do-app-vite-theta.vercel.app/",
+      "github": "https://github.com/Edirju/to-do-app",
+      "skill": "Vite"
+    },
+    {
+      "name": "Shopping Cart Simple App",
+      "description": "Proyecto de un carrito de compras, donde se trabaja con apis.",
+      "highlights": ["React", "Css3", "Javascript", "Html5"],
+      "url": "https://proyecto-carrito-compras-simple.vercel.app/",
+      "github": "https://github.com/Edirju/proyecto-carrito-compras",
+      "skill": "React"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "basics": {
+    "name": "Edinson Rivera Jurado",
+    "label": "Ingeniero de Sistemas con intereses en desarrollo web y marketing digital con +5 años de experiencia & Creador de Contenido de Programación",
+    "image": "/me175.webp",
+    "email": "edirju@gmail.com",
+    "phone": "+57 3128288647",
+    "url": "https://edinson-rivera-devweb.vercel.app/",
+    "summary": "+5 años de experiencia como Desarrollador Web | Community Manager. Actualmente soy freelance & creador de Contenido sobre Programación. Vivo en Cali, Colombia. He trabajado en diferentes entornos: desde desarrollador hasta gestionar redes sociales de empresas multinacionales.",
+    "location": {
+      "address": "",
+      "postalCode": "760023",
+      "city": "Santiago de Cali",
+      "countryCode": "CO",
+      "region": "Colombia"
+    },
+    "profiles": [
+      {
+        "network": "Linkedin",
+        "username": "Edinson",
+        "url": "https://www.linkedin.com/in/edinson-rivera-jurado-65187927/"
+      },
+      {
+        "network": "Github",
+        "username": "Edirju",
+        "url": "https://github.com/Edirju"
+      },
+      {
+        "network": "Bluesky",
+        "username": "Edirju | Edinson Rivera",
+        "url": "https://bsky.app/profile/edinsonrivera.bsky.social"
+      },
+      {
+        "network": "TwitterX",
+        "username": "edinson_rivera",
+        "url": "https://twitter.com/edinson_rivera"
+      },
+      {
+        "network": "Instagram",
+        "username": "edirju",
+        "url": "https://www.instagram.com/edirju/"
+      },
+      {
+        "network": "Threads",
+        "username": "edirju",
+        "url": "https://www.threads.net/@edirju"
+      }
+    ]
+  },
+  "posteos": [
+    {
+      "network": "Linkedin",
+      "date": "2024-07-01",
+      "title": "Publicación de Linkedin con video",
+      "description": "Publicación sobre un tema particular en Linkedin",
+      "url": "https://www.linkedin.com/posts/midudev_ya-est%C3%A1-la-beta-de-react-19-trae-nuevos-activity-7190710737059647488-hGI4?utm_source=share&utm_medium=member_desktop"
+    },
+    {
+      "network": "Facebook",
+      "date": "2024-07-02",
+      "title": "Aplicación de facebook con video",
+      "description": "Publicacion sobre un tema particular en Facebook",
+      "url": "https://www.facebook.com/100001232870588/videos/1509557056632620/"
+    },
+    {
+      "network": "TwitterX",
+      "date": "2024-07-03",
+      "title": "Aplicación de ex-twitter",
+      "description": "Publicacion sobre un tema particular en X",
+      "url": "https://twitter.com/edinson_rivera/status/1784595240743063766"
+    },
+    {
+      "network": "Instagram",
+      "date": "2024-07-04",
+      "title": "Aplicación de Instagram",
+      "description": "Publicacion sobre un tema particular en Instagram",
+      "url": "https://www.instagram.com/p/C5bJd8vgEgl-M3rF50mtY43NmGLQ74sye7MHDA0/"
+    },
+    {
+      "network": "Threads",
+      "date": "2024-07-05",
+      "title": "Aplicación de Threads",
+      "description": "Publicacion sobre un tema particular en Threads con un video asociado y un link a un proyecto",
+      "url": "https://www.threads.net/@edirju/post/C6O6V3BgedTd530eUAUeV2H-dv0tolIhXb1Ek40"
+    },
+    {
+      "network": "Bluesky",
+      "date": "2024-07-05",
+      "title": "Aplicación de BlueSky",
+      "description": "Publicacion sobre un tema particular en Threads con un video asociado y un link a un proyecto",
+      "url": "https://www.threads.net/@edirju/post/C6O6V3BgedTd530eUAUeV2H-dv0tolIhXb1Ek40"
+    }
+  ]
+}

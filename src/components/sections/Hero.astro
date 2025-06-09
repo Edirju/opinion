@@ -1,0 +1,199 @@
+---
+import Section from "../Section.astro";
+
+import Github from "../../icons/Github.astro";
+import Linkedin from "../../icons/Linkedin.astro";
+import Bluesky from "../../icons/Bluesky.astro";
+import Instagram from "../../icons/Instagram.astro";
+import Threads from "../../icons/Threads.astro";
+import Mail from "../../icons/Mail.astro";
+
+import { basics } from "../../data/landing.json";
+const { name, image, location, profiles, email } = basics;
+const { city, region } = location;
+
+const SOCIAL_ICONS: Record<string, any> = {
+  Github,
+  Linkedin,
+  Bluesky,
+  Instagram,
+  Threads,
+};
+
+const linkedInfo = profiles.find(({ network }) => network === "Linkedin");
+const linkedUrl = linkedInfo?.url;
+const blueskyInfo = profiles.find(({ network }) => network === "Bluesky");
+const blueskyUrl = blueskyInfo?.url;
+const githubInfo = profiles.find(({ network }) => network === "Github");
+const githubUrl = githubInfo?.url;
+const instagramInfo = profiles.find(({ network }) => network === "Instagram");
+const instagramUrl = instagramInfo?.url;
+const threadsInfo = profiles.find(({ network }) => network === "Threads");
+const threadsUrl = threadsInfo?.url;
+
+const printInfo = [
+  email,
+  linkedUrl,
+  githubUrl,
+  instagramUrl,
+  threadsUrl,
+  blueskyUrl,
+]
+  .filter(Boolean)
+  .join(" • ");
+---
+
+<Section>
+  <article
+    class="flex flex-col-reverse md:flex-row items-center justify-center gap-4 font-[family-name:var(--heading)]"
+  >
+    <header
+      class="flex flex-col gap-2 items-center justify-center text-center pr-0 md:items-start md:justify-start md:text-left md:pr-0.5"
+    >
+      <h1
+        class="text-[clamp(1.5rem,1.2037rem_+_1.4815vw,2.5rem)] font-medium capitalize text-balance tracking-tighter leading-tight text-shadow-[0_0_8px_rgb(var(--accent),0.25)] [&>span]:font-extralight text-transparent bg-clip-text"
+      >
+        desarrollo web <span>|</span> tecnología <span>|</span> social media + opinión.
+      </h1>
+      <h2
+        class="text-[rgb(var(--light),0.65)] font-light text-[clamp(1.125rem,1.0139rem_+_0.5556vw,1.5rem)] text-pretty tracking-tight leading-tight [&>p>strong]:text-[rgb(var(--primary),0.85)] [&>p>strong]:font-medium [&>p>strong]:text-shadow-[0_0_8px_rgb(var(--black),0.45)]"
+      >
+        <p>
+          Exploro <strong>Desarrollo Web</strong>, Tecnología y <strong
+            >Marketing Digital</strong
+          >. Comparto Mis <strong>Opiniones</strong> y Trabajos.
+        </p>
+      </h2>
+      <footer class="print">
+        {printInfo}
+      </footer>
+      <footer
+        class="no-print flex justify-center items-center gap-2 text-[rgb(var(--light),0.65)]"
+      >
+        <h3
+          class="font-[family-name:var(--mono)] text-[clamp(0.875rem,0.838rem_+_0.1852vw,1rem)] font-extralight tracking-tighter text-shadow-[0_0_8px_rgb(var(--primary),0.85)]"
+        >
+          Sígueme:
+        </h3>
+        <div
+          class="hero-links flex items-center gap-4 [&>a]:inline-flex [&>a]:items-center [&>a]:justify-center [&>a]:size-8 [&>a]:border [&>a]:border-[rgb(var(--light),0.15)] [&>a]:rounded-full [&>a]:bg-[rgb(var(--primary),0.1)] [&>a]:hover:bg-[rgb(var(--light),0.25)]
+          [&>a]:hover:text-[rgb(var(--primary),0.85)] [&>a]:transition-all [&>a]:duration-300 [&>a]:ease"
+        >
+          {
+            email && (
+              <a
+                href={`mailto:${email}`}
+                title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Mail />
+              </a>
+            )
+          }
+          {
+            profiles.map(({ network, url }) => {
+              const Icon = SOCIAL_ICONS[network];
+              if (!Icon) return null;
+              return (
+                <a
+                  href={url}
+                  title={`Visitar ${name} en ${network}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Icon />
+                </a>
+              );
+            })
+          }
+        </div>
+      </footer>
+    </header>
+    <figure>
+      <img src={image} alt={name} loading="lazy" />
+    </figure>
+  </article>
+</Section>
+
+<style>
+  article {
+    header {
+      h1 {
+        background-image: linear-gradient(
+          to right,
+          rgb(var(--primary)),
+          rgb(var(--accent)),
+          rgb(var(--primary)),
+          rgb(var(--accent)),
+          rgb(var(--primary))
+        );
+        background-size: var(--bg-size);
+        --bg-size: 200%;
+        animation: animate 2s steps(6) infinite;
+        animation: animate 2s linear infinite;
+        animation: animate 2s ease infinite;
+      }
+    }
+    figure {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      width: 40%;
+      position: relative;
+      border-radius: 50%;
+      outline: 5px solid rgb(var(--dark), 0.35);
+      outline-offset: -5px;
+      @media (width <= 700px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        width: 50%;
+      }
+      img {
+        display: block;
+        width: 100%;
+        opacity: 0.80;
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: top;
+        border-radius: inherit;
+      }
+    }
+    figure::before,
+    figure::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      inset: -12px;
+      border-radius: inherit;
+      background-image: conic-gradient(
+        rgb(var(--primary)),
+        rgb(var(--accent)),        
+        rgb(var(--primary))
+      );
+      /* animation: rotate 3s linear infinite; */
+    }
+    figure::after {
+      filter: blur(2rem);
+      opacity: 0.7;
+    }
+    figure:hover::before,
+    figure:hover::after {
+      animation-play-state: paused;
+    }
+  }
+  @keyframes animate {
+    to {
+      background-position: var(--bg-size);
+    }
+  }
+  @keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 360deg;
+    }
+  }
+</style>
