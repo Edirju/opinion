@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Header from "../components/Header.astro";
+import Proyectos from "../components/sections/Proyectos.astro";
+import Footer from "../components/Footer.astro";
+import Data from "../icons/Data.astro";
+
+import { basics } from '../data/landing.json'
+const { name, label } = basics
+---
+
+<Layout title={`Galería de Proyectos de ${name} • ${label}`}>
+  <Header />
+  <Section>
+    <article
+      class="text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)] flex flex-col gap-4"
+    >
+      <header class="flex flex-col gap-2">
+        <h2
+          class="flex items-center gap-1 capitalize font-bold text-pretty tracking-tight text-[clamp(1.125rem,1.0909rem_+_0.1818vw,1.25rem)]"
+        >
+          <Data /><span class="font-extralight opacity-45">|</span> Posts publicados.
+        </h2>
+        <p
+          class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.45)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
+        >
+          Los pequeños detalles marcan una gran diferencia. Con los años he
+          aprendido a fijarme en esos detalles. <strong>Aprender++</strong>.
+        </p>
+      </header>
+    </article>
+  </Section>
+  <Proyectos />
+  <Footer />
+</Layout>
