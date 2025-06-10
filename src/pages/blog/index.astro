@@ -1,114 +1,147 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { Image } from 'astro:assets';
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Spreadsheet from "../../icons/Spreadsheet.astro";
+import Rss from "../../icons/Rss.astro";
+import Github from "../../icons/Github.astro";
+import Linkedin from "../../icons/Linkedin.astro";
+import Bluesky from "../../icons/Bluesky.astro";
+import Instagram from "../../icons/Instagram.astro";
+import Threads from "../../icons/Threads.astro";
+import TwitterX from "../../icons/Twitter-x.astro";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const SOCIAL_ICONS: Record<string, any> = {
+  Github,
+  Linkedin,
+  Bluesky,
+  Instagram,
+  Threads,
+  TwitterX,
+};
+
+import { basics } from "../../data/landing.json";
+const { name, label } = basics;
+import { posteos } from "../../data/social-rss.json";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { Image } from "astro:assets";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title={`Blog de ${name} | ${label}`}>
+  <Header />
+  <Section>
+    <article
+      class="text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)] flex flex-col gap-4"
+    >
+      <header class="flex flex-col gap-2">
+        <h2
+          class="flex items-center gap-1 capitalize font-bold text-pretty tracking-tight text-[clamp(1.125rem,1.0909rem_+_0.1818vw,1.25rem)]"
+        >
+          <Spreadsheet /><span class="font-extralight opacity-45">|</span> Posts
+          publicados.
+        </h2>
+        <p
+          class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.45)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
+        >
+          Los pequeños detalles marcan una gran diferencia. Con los años he
+          aprendido a fijarme en esos detalles. <strong>Aprender++</strong>.
+        </p>
+      </header>
+
+      <footer class="text-[rgb(var(--light),0.65)]">
+        <ul class="flex flex-wrap gap-3 md:gap-8 list-none m-0 p-0">
+          {
+            posts.map((post) => (
+              <li class="w-full md:w-[calc(50%-1rem)] transition-all duration-200 ease-in-out first:w-full first:mb-4 first:md:text-center">
+                <a href={`/blog/${post.id}`} class="block">
+                  {post.data.heroImage && (
+                    <Image
+                      width={720}
+                      height={360}
+                      src={post.data.heroImage}
+                      alt={post.data.title}
+                      class="first:w-full rounded-xl mb-2 hover:shadow-[var(--box-shadow)] transition-all duration-200 ease-in-out"
+                    />
+                  )}
+                  <h4 class="title text-[clamp(1.25rem,1.1759rem_+_0.3704vw,1.5rem)] tracking-tighter m-0 leading-none hover:text-shadow-[0_0_8px_rgb(var(--primary),0.45)]">
+                    {post.data.title}
+                  </h4>
+                  <time class="date m-0 text-[rgb(var(--primary),0.45)] font-[family-name:var(--mono)] font-light text-sm">
+                    <FormattedDate date={post.data.pubDate} />
+                  </time>
+                  <p class="description text-sm font-extralight opacity-45">
+                    {post.data.description}
+                  </p>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </footer>
+    </article>
+
+    <article
+      class="text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)] flex flex-col gap-4 mt-16"
+    >
+      <header class="flex flex-col gap-2">
+        <h2
+          class="flex items-center gap-1 capitalize font-bold text-pretty tracking-tight text-[clamp(1.125rem,1.0909rem_+_0.1818vw,1.25rem)]"
+        >
+          <Rss /><span class="font-extralight opacity-45">|</span> Social media posts.
+        </h2>
+        <p
+          class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.45)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
+        >
+          Los pequeños detalles marcan una gran diferencia. Con los años he
+          aprendido a fijarme en esos detalles. <strong>Aprender++</strong>.
+        </p>
+      </header>
+
+      <footer class="text-[rgb(var(--light),0.65)]">
+        <ul class="flex flex-col gap-4">
+          {
+            posteos.map(({ network, title, url, date }) => {
+              const Icon = SOCIAL_ICONS[network];
+              if (!Icon) return null;
+              return (
+                <li>
+                  <a
+                    href={url}
+                    title={`Visita ${network} • Leer más: ${title}`}
+                    class="flex items-center gap-2 w-fit"
+                  >
+                    <Icon />
+                    <h3 class="text-[clamp(0.875rem,0.7639rem_+_0.5556vw,1.25rem)] font-extralight tracking-tighter capitalize border-l border-l-[rgb(var(--primary),0.25)] pl-1 relative transition-all duration-200 ease-in-out after:content-[''] after:absolute after:left-1 after:-right-1 after:top-full after:h-0.5 after:bg-[rgb(var(--primary),0.65)] after:transition after:origin-left after:transform-[scaleX(0)] hover:text-[rgb(var(--primary),0.65)] hover:after:transform-[scaleX(1)]">
+                      {title}
+                    </h3>
+                    <time class="font-[family-name:var(--mono)] text-[clamp(0.75rem,0.713rem+0.1852vw,0.875rem)] font-light text-[rgb(var(--primary),0.45)] tracking-tighter border border-[rgb(var(--primary),0.25)] px-0.5 rounded ">
+                      {date}
+                    </time>
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </footer>
+    </article>
+  </Section>
+  <Footer />
+</Layout>
+
+<style>
+  ul li:first-child .title {
+    font-size: clamp(1.25rem, 0.8796rem + 1.8519vw, 2.5rem);
+  }
+  .title {
+    /* font-size: 24px; */
+  }
+</style>
