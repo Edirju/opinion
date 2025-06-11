@@ -1,0 +1,70 @@
+---
+const { info } = Astro.props;
+const { theme = {} } = info;
+const { isDark = false } = theme;
+---
+
+<div
+  class="hidden sm:block absolute left-4 bottom-4 px-8 py-1 rounded-2xl border border-[rgb(var(--light),0.3)] shadow-[0_4px_30px_rgb(0,0,0,0.1)] bg-[rgb(var(--light),0.14)] backdrop-blur-[5px]"
+>
+  <h1 class="font-bold mt-4">
+    <a
+      href="/projects"
+      class="flex items-center gap-2 text-xs hover:scale-110 transition duration-200 ease"
+    >
+      <div class="flex flex-col text-center leading-none">
+        <span
+          class:list={[
+            "text-4xl tracking-tighter px-1 inline-block bg-clip-text text-transparent bg-gradient-to-r",
+            {
+              "from-[rgb(var(--accent))] to-[rgb(var(--primary))]": !isDark,
+              "from-[rgb(var(--light))] to-[rgb(var(--primary))]": isDark,
+            },
+          ]}
+        >
+          Ver+
+        </span>
+
+        <span
+          class:list={[
+            isDark ? "text-[rgb(var(--light))]" : "text-[rgb(var(--primary))]",
+            "tracking-tighter text-sm text-[rgb(var(--accent),0.85)] -mt-2",
+          ]}
+        >
+          Proyecto
+        </span>
+      </div>
+
+      <span class="rotate-6 text-[rgb(var(--primary),0.85)]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="rounded size-14"
+          ><path
+            d="M1 5C1 4.44772 1.44772 4 2 4H22C22.5523 4 23 4.44772 23 5V19C23 19.5523 22.5523 20 22 20H2C1.44772 20 1 19.5523 1 19V5ZM9 8H7V10H9V8ZM7 13V16H9V11H6V13H7ZM13 9V11H19V9H13ZM18 13H13V15H18V13Z"
+          ></path></svg
+        >
+      </span>
+    </a>
+  </h1>
+
+  <h2
+    class:list={[
+      isDark ? "text-[rgb(var(--light))]" : "text-[rgb(var(--primary))]",
+      "text-sm uppercase font-light tracking-tighter",
+    ]}
+  >
+    # {info.number}<span> • </span>{info.title}
+  </h2>
+
+  <a
+    href="/projects"
+    class:list={[
+      "text-xs font-mono tracking-tight hover:underline hover:underline-offset-2 animate-fade-in animate-delay-800",
+      isDark ? "text-[rgb(var(--light))]" : "text-[rgb(var(--primary))]",
+    ]}
+  >
+    ← Regresar a Proyectos.
+  </a>
+</div>

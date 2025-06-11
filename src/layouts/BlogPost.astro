@@ -1,86 +1,309 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import { Image } from 'astro:assets';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Section from "../components/Section.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { Image } from "astro:assets";
+import { lazy } from "astro:schema";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
-
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <main class="min-h-[100dvh] relative">
+      <div
+        class="absolute inset-0 -z-10 h-full w-full bg-transparent bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_14px]"
+      >
+        <div
+          class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-[rgb(var(--primary))] opacity-20 blur-[100px]"
+        >
+        </div>
+      </div>
+      <Header />
+      <Section>
+        <article
+          class="font-[family-name:var(--heading)] text-[rgb(var(--dark),0.85)] p-4 bg-[rgb(var(--light),0.85)] rounded-xl"
+        >
+          <header>
+            <div class="hero-image w-full">
+              {
+                heroImage && (
+                  <Image
+                    width={700}
+                    height={350}
+                    src={heroImage}
+                    alt=""
+                    class="rounded-xl block mx-auto shadow-[var(--box-shadow)]"
+                  />
+                )
+              }
+            </div>
+            <div
+              class="prose w-[700px] max-w-[calc(100%-1em)] m-auto p-2 text-[rgb(var(--accent),0.85)]"
+            >
+              <div class="title mb-4 pt-2 text-center leading-none">
+                <div
+                  class="date mb-1 text-[rgb(var(--dark),0.85)] text-[clamp(0.875rem,0.7813rem_+_0.25vw,1rem)] font-[family-name:var(--mono)] tracking-tighter opacity-65 font-light"
+                >
+                  <FormattedDate date={pubDate} />
+                  {
+                    updatedDate && (
+                      <div class="last-update-on">
+                        Actualización: <FormattedDate date={updatedDate} />
+                      </div>
+                    )
+                  }
+                </div>
+                <h1
+                  class="text-[clamp(2.25rem,1.6875rem_+_1.5vw,3rem)] font-semibold tracking-tight text-shadow-[0_0_4px_rgb(var(--dark),0.25)]"
+                >
+                  {title}
+                </h1>
+              </div>
+            </div>
+            <hr />
+          </header>
+          <footer
+            class="pt-4 text-pretty font-[family-name:var(--body)] font-light text-[rgb(var(--dark),0.85)] tracking-tight"
+          >
+            <slot />
+          </footer>
+        </article>
+        <hr />
+      </Section>
+      <Footer />
+    </main>
+  </body>
 </html>
+
+<style>
+  :root {
+    --hdr-gradient: linear-gradient(
+      to top left in oklch,
+      oklch(0.1824 0.0152 266.74) 0%,
+      oklch(0.2607 0.0166 248.46) 100%
+    );
+    --sdr-gradient: linear-gradient(to top left, #0f1219 0%, #1e252c 100%);
+    background: var(--hdr-gradient);
+  }
+  footer {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      line-height: 1.25;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 40px;
+    }
+    h3 {
+      font-size: 32px;
+    }
+    h4 {
+      font-size: 24px;
+    }
+    h5 {
+      font-size: 20px;
+    }
+    strong,
+    b {
+      font-weight: 700;
+    }
+    a {
+      color: rgb(var(--accent), 0.85);
+      &:hover {
+        color: rgb(var(--accent), 0.55);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    textarea {
+      width: 100%;
+      font-size: 1rem;
+    }
+    input {
+      font-size: 16px;
+    }
+    table {
+      width: 100%;
+      font-family: var(--mono);
+    }
+    code {
+      padding: 2px 5px;
+      background-color: rgb(var(--dark));
+      border-radius: 2px;
+      color: rgb(var(--primary), 0.85);
+      font-family: var(--mono);
+      font-weight: 400;
+    }
+    pre {
+      padding: 1em;
+      border-radius: 0.5rem;
+      background: rgb(var(--dark));
+    }
+    pre > code {
+      all: unset;
+    }
+    blockquote {
+      border-left: 3px solid rgb(var(--accent), 0.85);
+      padding: 0 0 0 20px;
+      margin: 0px;
+      font-size: clamp(1.125rem, 1.0313rem + 0.25vw, 1.25rem);
+      letter-spacing: -0.05em;
+      line-height: 1.25;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid rgb(var(--dark),0.65);
+    }
+  }
+</style>
+<!-- <html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <main class="min-h-[100dvh] relative">
+      <div
+        class="absolute inset-0 -z-10 h-full w-full bg-transparent bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_14px]"
+      >
+        <div
+          class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-[rgb(var(--primary))] opacity-20 blur-[100px]"
+        >
+        </div>
+      </div>
+      <Header />
+      <Section>
+        <article>
+          <div class="hero-image">
+            {
+              heroImage && (
+                <Image
+                  width={1020}
+                  height={510}
+                  src={heroImage}
+                  alt=""                  
+                />
+              )
+            }
+          </div>
+          <div class="prose">
+            <div class="title">
+              <div class="date">
+                <FormattedDate date={pubDate} />
+                {
+                  updatedDate && (
+                    <div class="last-updated-on">
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </div>
+                  )
+                }
+              </div>
+              <h1 class="">
+                {title}
+              </h1>
+              <hr />
+            </div>
+            <div class="text-pretty">
+              <slot />
+            </div>
+          </div>
+        </article>
+      </Section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  :root {
+    --hdr-gradient: linear-gradient(
+      to top left in oklch,
+      oklch(0.1824 0.0152 266.74) 0%,
+      oklch(0.2607 0.0166 248.46) 100%
+    );
+    --sdr-gradient: linear-gradient(to top left, #0f1219 0%, #1e252c 100%);
+    background: var(--hdr-gradient);
+  }
+  main {
+    font-family: var(--body);
+    margin: 0;
+  }
+  .hero-image {
+    width: 100%;
+  }
+  .hero-image img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+  }
+  .prose {
+    width: 700px;
+    max-width: calc(100% - 1em);
+    margin: auto;
+    padding: 0.5em;
+    color: rgb(var(--light), 0.85);
+  }
+  .title {
+    margin-bottom: 1em;
+    padding: 1em 0;
+    text-align: center;
+    line-height: 1;
+  }
+  .title h1 {
+    color: rgb(var(--primary), 0.85);
+    text-shadow: 0 0 0.5em rgb(var(--accent), 0.65);
+  }
+  .date {
+    margin-bottom: 0.25em;
+    color: rgb(var(--light), 0.45);
+  } 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 0.5rem 0;    
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  .last-updated-on {
+    font-style: italic;
+  }
+  </style> -->
