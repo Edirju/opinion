@@ -31,7 +31,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ## Images
 
-### Syntax
+### Image Syntax
 
 ```markdown
 ![Alt text](./full/or/relative/path/of/image)
@@ -47,7 +47,7 @@ The blockquote element represents content that is quoted from another source, op
 
 ### Blockquote without attribution
 
-#### Syntax
+#### Basic Blockquote Syntax
 
 ```markdown
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
@@ -61,7 +61,7 @@ The blockquote element represents content that is quoted from another source, op
 
 ### Blockquote with attribution
 
-#### Syntax
+#### Blockquote with Attribution Syntax
 
 ```markdown
 > Don't communicate by sharing memory, share memory by communicating.<br>
@@ -77,7 +77,7 @@ The blockquote element represents content that is quoted from another source, op
 
 ## Tables
 
-### Syntax
+### Table Syntax
 
 ```markdown
 | Italics   | Bold     | Code   |
@@ -93,7 +93,7 @@ The blockquote element represents content that is quoted from another source, op
 
 ## Code Blocks
 
-### Syntax
+### Code Block Syntax
 
 we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
 
