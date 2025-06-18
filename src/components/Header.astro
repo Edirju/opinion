@@ -1,167 +1,81 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import Logo from "../icons/Logo.astro";
-import { SITE_TITLE } from "../consts";
 ---
 
 <header
-  class="font-[family-name:var(--body)] text-[rgb(var(--light),0.65)] sticky top-4 z-20 bg-[rgb(var(--primary),0.10)] backdrop-blur-md backdrop-saturate-150 shadow-[0_0_15px_rgb(var(--primary),0.20)] border border-[rgb(var(--primary),0.05)] rounded-md max-w-[700px] px-4 py-2 flex flex-row flex-wrap items-center justify-between md:mx-auto mx-4 mb-[38px] md:mb-[72px] bg-linear-to-br from-[rgb(var(--primary),0.10)] via-[rgb(var(--accent),0.10)] to-[rgb(var(--secondary),0.10)]"
+  class="font-[family-name:var(--body)] text-[rgb(var(--light),0.45)] sticky top-0 z-20 bg-[rgb(var(--primary),0.1)] backdrop-blur-md backdrop-saturate-150 shadow-[0_0_15px_rgb(var(--primary),0.1)] w-full bg-linear-to-br from-[rgb(var(--dark),0.20)] via-[rgb(var(--primary),0.05)] to-[rgb(var(--black),0.20)] border-b border-[rgb(var(--primary),0.05)] mb-[36px] md:mb-[72px]"
 >
-  <a
-    href="/"
-    class="logo flex items-center transition-all duration-300 ease-in-out text-[rgb(var(--primary),0.85)] hover:text-[rgb(var(--light),0.85)] hover:text-shadow-[0_0_8px_rgb(var(--primary),0.85)]"
+  <section
+    class="max-w-[700px] p-4 md:px-0 flex flex-row flex-wrap items-center justify-between md:mx-auto"
   >
-    <figure
-      class="hover:shadow-[0_0_8px_rgb(var(--primary),0.25)] rounded-full"
+    <a
+      href="/"
+      class="logo flex items-center transition-all duration-300 ease-in-out text-[rgb(var(--primary),0.85)] hover:text-[rgb(var(--light),0.85)] hover:text-shadow-[0_0_8px_rgb(var(--primary),0.85)] md:pr-2 md:border-r md:border-[rgb(var(--primary),0.25)]"
     >
-      <Logo />
-    </figure>
-    <h2 class="text-2xl font-bold tracking-tighter ml-0.5">dinson.</h2>
-  </a>
-  <nav class="flex flex-wrap items-center justify-center gap-2">
-    <HeaderLink href="/blog">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        class="size-5"
-        viewBox="0 0 24 24"
-        style="fill: currentColor;transform: ;msFilter:;"
-        ><path
-          d="M19.875 3H4.125C2.953 3 2 3.897 2 5v14c0 1.103.953 2 2.125 2h15.75C21.047 21 22 20.103 22 19V5c0-1.103-.953-2-2.125-2zm0 16H4.125c-.057 0-.096-.016-.113-.016-.007 0-.011.002-.012.008L3.988 5.046c.007-.01.052-.046.137-.046h15.75c.079.001.122.028.125.008l.012 13.946c-.007.01-.052.046-.137.046z"
-        ></path><path d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z"
-        ></path></svg
+      <figure
+        class="hover:shadow-[0_0_8px_rgb(var(--primary),0.25)] rounded-full"
       >
-      <span class="text-sm font-light uppercase tracking-tight hidden md:block"
-        >Blog</span
-      >
-    </HeaderLink>
-    <HeaderLink href="/projects">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        class="size-5"
-        viewBox="0 0 24 24"
-        style="fill: currentColor;transform: ;msFilter:;"
-        ><path
-          d="M20 6c0-2.168-3.663-4-8-4S4 3.832 4 6v2c0 2.168 3.663 4 8 4s8-1.832 8-4V6zm-8 13c-4.337 0-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3c0 2.168-3.663 4-8 4z"
-        ></path><path
-          d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z"
-        ></path></svg
-      >
-      <span class="text-sm font-light uppercase tracking-tight hidden md:block"
-        >Proyectos</span
-      >
-    </HeaderLink>
-    <HeaderLink href="/resume" target='_blank'>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        class="size-5"
-        viewBox="0 0 24 24"
-        style="fill: currentColor;transform: ;msFilter:;"
-        ><path
-          d="M19 2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h4l3 3 3-3h4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-7 3c1.727 0 3 1.272 3 3s-1.273 3-3 3c-1.726 0-3-1.272-3-3s1.274-3 3-3zM7.177 16c.558-1.723 2.496-3 4.823-3s4.266 1.277 4.823 3H7.177z"
-        ></path></svg
-      >
-      <span class="text-sm font-light uppercase tracking-tight hidden md:block"
-        >Resume</span
-      >
-    </HeaderLink>    
-  </nav>
+        <Logo />
+      </figure>
+      <h2 class="text-2xl font-bold tracking-tighter ml-1">dinson.</h2>
+    </a>
+    <nav class="flex flex-wrap items-center justify-center md:gap-4 gap-6">
+      <HeaderLink href="/blog">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          class="size-5"
+          viewBox="0 0 24 24"
+          style="fill: currentColor;transform: ;msFilter:;"
+          ><path
+            d="M19.875 3H4.125C2.953 3 2 3.897 2 5v14c0 1.103.953 2 2.125 2h15.75C21.047 21 22 20.103 22 19V5c0-1.103-.953-2-2.125-2zm0 16H4.125c-.057 0-.096-.016-.113-.016-.007 0-.011.002-.012.008L3.988 5.046c.007-.01.052-.046.137-.046h15.75c.079.001.122.028.125.008l.012 13.946c-.007.01-.052.046-.137.046z"
+          ></path><path
+            d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z"
+          ></path></svg
+        >
+        <span
+          class="text-sm font-light uppercase tracking-tight hidden md:block"
+          >Blog</span
+        >
+      </HeaderLink>
+      <HeaderLink href="/projects">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          class="size-5"
+          viewBox="0 0 24 24"
+          style="fill: currentColor;transform: ;msFilter:;"
+          ><path
+            d="M20 6c0-2.168-3.663-4-8-4S4 3.832 4 6v2c0 2.168 3.663 4 8 4s8-1.832 8-4V6zm-8 13c-4.337 0-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3c0 2.168-3.663 4-8 4z"
+          ></path><path
+            d="M20 10c0 2.168-3.663 4-8 4s-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3z"
+          ></path></svg
+        >
+        <span
+          class="text-sm font-light uppercase tracking-tight hidden md:block"
+          >Proyectos</span
+        >
+      </HeaderLink>
+      <HeaderLink href="/resume" target="_blank">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          class="size-5"
+          viewBox="0 0 24 24"
+          style="fill: currentColor;transform: ;msFilter:;"
+          ><path
+            d="M19 2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h4l3 3 3-3h4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-7 3c1.727 0 3 1.272 3 3s-1.273 3-3 3c-1.726 0-3-1.272-3-3s1.274-3 3-3zM7.177 16c.558-1.723 2.496-3 4.823-3s4.266 1.277 4.823 3H7.177z"
+          ></path></svg
+        >
+        <span
+          class="text-sm font-light uppercase tracking-tight hidden md:block"
+          >Resume</span
+        >
+      </HeaderLink>
+    </nav>
+  </section>
 </header>
-
-<!-- <style>
-  header {
-    background-image: linear-gradient(
-      to right bottom,
-      #f09146,
-      #dd7935,
-      #c96124,
-      #b64914,
-      #a23004
-    );
-  }
-</style> -->
-<!-- <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-		<div class="social-links">
-			<a href="https://m.webtoo.ls/@astro" target="_blank">
-				<span class="sr-only">Follow Astro on Mastodon</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"
-					></path></svg
-				>
-			</a>
-			<a href="https://twitter.com/astrodotbuild" target="_blank">
-				<span class="sr-only">Follow Astro on Twitter</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-					></path></svg
-				>
-			</a>
-			<a href="https://github.com/withastro/astro" target="_blank">
-				<span class="sr-only">Go to Astro's GitHub repo</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-					></path></svg
-				>
-			</a>
-		</div>
-	</nav>
-</header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style> -->
