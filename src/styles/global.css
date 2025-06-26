@@ -2,20 +2,29 @@
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/inconsolata";
 
-
 :root {
 	/* Colors */
-	--primary: 240, 145, 70; /*#F09146*/
-	--secondary: 18, 26, 40; /*#121A28*/
-	--accent: 162, 48, 4; /*#A23004*/
+	--primary: 240, 145, 70;
+	/*#F09146*/
+	--secondary: 18, 26, 40;
+	/*#121A28*/
+	--accent: 162, 48, 4;
+	/*#A23004*/
 
-	--accent-dark: 81, 48, 4; /*#513004*/
-	--dark: 30, 37, 44; /*#1E252C*/
-	--light: 255, 254, 254; /*#FFFEFE*/
-	--black: 15, 18, 25; /*#0f1219*/
-	--gray: 52, 66, 86; /*#344256*/
-	--gray-light: 229, 233, 240; /*#e5e9f0*/
-	--gray-dark: 34, 41, 57; /*#222939*/
+	--accent-dark: 81, 48, 4;
+	/*#513004*/
+	--dark: 30, 37, 44;
+	/*#1E252C*/
+	--light: 255, 254, 254;
+	/*#FFFEFE*/
+	--black: 15, 18, 25;
+	/*#0f1219*/
+	--gray: 52, 66, 86;
+	/*#344256*/
+	--gray-light: 229, 233, 240;
+	/*#e5e9f0*/
+	--gray-dark: 34, 41, 57;
+	/*#222939*/
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	/* Shadows*/
 	--box-shadow:
@@ -29,26 +38,86 @@
 
 /* CSS General*/
 body {
-	font-family: var(--body);	
+	font-family: var(--body);
 }
 
 .print {
 	display: none !important;
 }
+
 @media print {
 	.no-print {
 		display: none !important;
 	}
+
 	.print {
 		display: block !important;
 	}
+
 	article {
 		break-inside: avoid;
 	}
+
 	astro-dev-toolbar {
 		display: none !important;
 	}
 }
+
+/* Animations */
+
+@keyframes fade-in-left {
+	0% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes fade-in-up {
+	0%{
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1
+	}
+}
+@keyframes fade-in-right {
+	0%{ opacity: 0; transform: translateX(-20px);}
+	100%{ opacity: 1; transform: translateX(0);}
+}
+@keyframes rotate-in {
+	0% {
+		opacity: 0;
+		transform: rotate(-360deg);
+	}
+	100% {
+		opacity: 1;
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes rotate-180 {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(180deg);
+	}
+}
+
+
 /* 
 body {
 	font-family: var(--body);
