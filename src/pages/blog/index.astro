@@ -25,7 +25,6 @@ import { basics } from "../../data/landing.json";
 const { name, label } = basics;
 import { posteos } from "../../data/social-rss.json";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import { Image } from "astro:assets";
@@ -39,7 +38,7 @@ const posts = (await getCollection("blog")).sort(
   <Header />
   <Section>
     <article
-      class="text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)] flex flex-col gap-4"
+      class="text-orange-400/85 font-[family-name:var(--body)] flex flex-col gap-4 animate-fade-in-right"
     >
       <header class="flex flex-col gap-2">
         <h2
@@ -49,14 +48,17 @@ const posts = (await getCollection("blog")).sort(
           publicados.
         </h2>
         <p
-          class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.45)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
+          class="text-sm font-extralight text-pretty tracking-tight text-white/65 [&>strong]:text-orange-400/65 [&>strong]:font-medium"
         >
-          Los pequeños detalles marcan una gran diferencia. Con los años he
-          aprendido a fijarme en esos detalles. <strong>Aprender++</strong>.
+          Ideas cocinadas a <strong>fuego lento</strong>. Mi rincón para <strong
+            >reflexionar</strong
+          > a fondo, sin la prisa de un timeline. <strong
+            >Atención al detalle+</strong
+          >
         </p>
       </header>
 
-      <footer class="text-[rgb(var(--light),0.65)]">
+      <footer class="text-white/65">
         <ul class="flex flex-wrap gap-3 md:gap-8 list-none m-0 p-0">
           {
             posts.map((post) => (
@@ -74,10 +76,10 @@ const posts = (await getCollection("blog")).sort(
                   <h4 class="title text-[clamp(1.25rem,1.1759rem_+_0.3704vw,1.5rem)] tracking-tighter m-0 leading-none hover:text-shadow-[0_0_8px_rgb(var(--primary),0.45)]">
                     {post.data.title}
                   </h4>
-                  <time class="date m-0 text-[rgb(var(--primary),0.45)] font-[family-name:var(--mono)] font-light text-sm">
+                  <time class="date m-0 text-orange-400/55 font-[family-name:var(--mono)] font-light text-sm">
                     <FormattedDate date={post.data.pubDate} />
                   </time>
-                  <p class="description text-sm font-extralight opacity-45">
+                  <p class="description text-sm font-extralight text-white/45">
                     {post.data.description}
                   </p>
                 </a>
@@ -89,7 +91,7 @@ const posts = (await getCollection("blog")).sort(
     </article>
 
     <article
-      class="text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)] flex flex-col gap-4 mt-16"
+      class="text-orange-400/85 font-[family-name:var(--body)] flex flex-col gap-4 mt-16 animate-fade-in-left"
     >
       <header class="flex flex-col gap-2">
         <h2
@@ -100,12 +102,12 @@ const posts = (await getCollection("blog")).sort(
         <p
           class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.45)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
         >
-          Los pequeños detalles marcan una gran diferencia. Con los años he
-          aprendido a fijarme en esos detalles. <strong>Aprender++</strong>.
+          Chispazos, ideas sueltas y hallazgos del momento. Piensa en esto como
+          mi bloc de notas público: <strong>contenido rápido</strong>, <strong>directo</strong> y <strong>sin filtros</strong>, recién salido del horno de la curiosidad.
         </p>
       </header>
 
-      <footer class="text-[rgb(var(--light),0.65)]">
+      <footer class="text-white/65">
         <ul class="flex flex-col gap-4">
           {
             posteos.map(({ network, title, url, date }) => {
@@ -119,10 +121,10 @@ const posts = (await getCollection("blog")).sort(
                     class="flex items-center gap-2 w-fit"
                   >
                     <Icon />
-                    <h3 class="text-[clamp(0.875rem,0.7639rem_+_0.5556vw,1.25rem)] font-extralight tracking-tighter capitalize border-l border-l-[rgb(var(--primary),0.25)] pl-1 relative transition-all duration-200 ease-in-out after:content-[''] after:absolute after:left-1 after:-right-1 after:top-full after:h-0.5 after:bg-[rgb(var(--primary),0.65)] after:transition after:origin-left after:transform-[scaleX(0)] hover:text-[rgb(var(--primary),0.65)] hover:after:transform-[scaleX(1)]">
+                    <h3 class="text-[clamp(0.875rem,0.7639rem_+_0.5556vw,1.25rem)] font-extralight tracking-tighter capitalize border-l border-l-orange-400/45 pl-1 relative transition-all duration-200 ease-in-out after:content-[''] after:absolute after:left-1 after:-right-1 after:top-full after:h-0.5 after:bg-orange-400/65 after:transition after:origin-left after:transform-[scaleX(0)] hover:text-orange-400/65 hover:after:transform-[scaleX(1)]">
                       {title}
                     </h3>
-                    <time class="font-[family-name:var(--mono)] text-[clamp(0.75rem,0.713rem+0.1852vw,0.875rem)] font-light text-[rgb(var(--primary),0.45)] tracking-tighter border border-[rgb(var(--primary),0.25)] px-0.5 rounded ">
+                    <time class="font-[family-name:var(--mono)] text-[clamp(0.75rem,0.713rem+0.1852vw,0.875rem)] font-light text-orange-400/65 tracking-tighter border border-orange-400/25 px-0.5 rounded">
                       {date}
                     </time>
                   </a>
@@ -138,6 +140,9 @@ const posts = (await getCollection("blog")).sort(
 </Layout>
 
 <style>
+  @import "tailwindcss";
+  @plugin "@midudev/tailwind-animations";
+
   ul li:first-child .title {
     font-size: clamp(1.25rem, 0.8796rem + 1.8519vw, 2.5rem);
   }

@@ -8,7 +8,7 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
 
 <Section>
   <section
-    class="text-[rgb(var(--light),0.85)] font-[family-name:var(--body)] columns-1 md:columns-3 gap-4 mx-auto"
+    class="text-[rgb(var(--light),0.85)] font-[family-name:var(--body)] columns-1 md:columns-3 gap-4 mx-auto animate-fade-in-up"
   >
     <article
       class="border border-[rgb(var(--primary),0.25)] rounded-lg min-h-60 items-center bg-linear-to-br from-[rgb(var(--primary),0.35)] via-[rgb(var(--dark),0.35)] to-[rgb(var(--accent),0.35)] break-inside-avoid"
@@ -92,7 +92,10 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
                     </a>
                   </li>
                   <li>
-                    <a href={`/${project.slug}`} class="inline-flex gap-0.5 items-center justify-center bg-[rgb(var(--accent),0.85)] text-[rgb(var(--light),0.85)] rounded-full text-xs text-center px-1.5 py-0.5 font-[family-name:var(--mono)] transition hover:bg-[rgb(var(--black))] hover:text-[rgb(var(--accent),0.85)] uppercase">
+                    <a
+                      href={`/${project.slug}`}
+                      class="inline-flex gap-0.5 items-center justify-center bg-[rgb(var(--accent),0.85)] text-[rgb(var(--light),0.85)] rounded-full text-xs text-center px-1.5 py-0.5 font-[family-name:var(--mono)] transition hover:bg-[rgb(var(--black))] hover:text-[rgb(var(--accent),0.85)] uppercase"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -114,3 +117,7 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
   </section>
 </Section>
 
+<style>
+  @import "tailwindcss";
+  @plugin "@midudev/tailwind-animations";
+</style>

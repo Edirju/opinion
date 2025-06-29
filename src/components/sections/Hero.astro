@@ -56,7 +56,7 @@ const printInfo = [
         desarrollo web <span>|</span> tecnología <span>|</span> social media + opinión.
       </h1>
       <h2
-        class="text-[rgb(var(--light),0.65)] font-light text-[clamp(1.125rem,1.0139rem_+_0.5556vw,1.5rem)] text-pretty tracking-tight leading-tight [&>p>strong]:text-[rgb(var(--primary),0.85)] [&>p>strong]:font-medium [&>p>strong]:text-shadow-[0_0_8px_rgb(var(--black),0.45)]"
+        class="text-white/65 font-light text-[clamp(1.125rem,1.0139rem_+_0.5556vw,1.5rem)] text-pretty tracking-tight leading-tight [&>p>strong]:text-orange-400/85 [&>p>strong]:font-medium [&>p>strong]:text-shadow-[0_0_8px_rgb(var(--black),0.45)]"
       >
         <p>
           Exploro <strong>Desarrollo Web</strong>, Tecnología y <strong
@@ -111,14 +111,22 @@ const printInfo = [
       </footer>
     </header>
     <figure>
-      <img src={image} alt={name} loading="lazy" class="md:rotate-6" />
+      <img
+        src={image}
+        alt={name}
+        loading="lazy"
+        class="sm:rotate-6"
+      />
     </figure>
   </article>
 </Section>
 
 <style>
+  @import "tailwindcss";
+  @plugin "@midudev/tailwind-animations";
+
   article {
-    animation: fade-in-up .8s ease-in-out;
+    @apply animate-fade-in-up;
     header {
       h1 {
         background-image: linear-gradient(
@@ -154,7 +162,7 @@ const printInfo = [
       img {
         display: block;
         width: 100%;
-        opacity: 0.80;
+        opacity: 0.8;
         aspect-ratio: 1;
         object-fit: cover;
         object-position: top;
@@ -170,7 +178,7 @@ const printInfo = [
       border-radius: inherit;
       background-image: conic-gradient(
         rgb(var(--primary)),
-        rgb(var(--accent)),        
+        rgb(var(--accent)),
         rgb(var(--primary))
       );
       animation: rotate 3s linear infinite;

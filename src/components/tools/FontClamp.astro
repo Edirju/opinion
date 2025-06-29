@@ -1,0 +1,174 @@
+---
+import Section from "../Section.astro";
+import ToolsIcon from "@/assets/ToolsIcon.astro";
+---
+
+<Section>
+  <article
+    class="font-[family-name:var(--font-body)] text-orange-400/85 flex flex-col gap-6 animate-fade-in-up"
+  >
+    <header class="flex flex-col gap-2">
+      <h2
+        class="flex items-center gap-1 justify-center sm:justify-start text-[clamp(1.125rem,1.0909rem_+_0.1818vw,1.25rem)] capitalize font-bold tracking-tighter text-pretty text-shadow-[0_0_8px_rgba(var(--black),0.35)]"
+      >
+        <ToolsIcon /><span class="text-orange-400/45 font-extralight">|</span
+        >CSS Clamp() Generator.
+      </h2>
+      <p
+        class="text-sm font-light text-white/65 tracking-tighter text-center sm:text-left text-pretty [&>strong]:font-medium [&>strong]:text-orange-400/65 [&>strong]:text-shadow-[0_0_8px_rgba(var(--black),0.25)]"
+      >
+        Esta herramienta gratuita calcula la expresión CSS <strong
+          >clamp()</strong
+        > perfecta basándose en tus tamaños de fuente mínimo y máximo. <strong
+          >¿Necesitas un tamaño de fuente adaptable?</strong
+        >
+      </p>
+    </header>
+    <footer
+      class="p-2 border border-orange-400/25 rounded-lg shadow-[0_0_8px_rgba(var(--primary),0.15)] bg-linear-to-tr from-gray-900/45 via-zinc-800/45 to-neutral-900/45"
+    >
+      <form action="" id="clampForm" class="marco">
+        <fieldset class="">
+          <legend class="">Font Size Range</legend>
+          <div class="cuadro">
+            <label for="minFont" class="">Min. Font Size:</label>
+            <div class="caja">
+              <input type="number" id="minFont" value="16" class="" />
+              <span>px</span>
+            </div>
+          </div>
+          <div class="cuadro">
+            <label for="maxFont" class="">Max. Font Size:</label>
+            <div class="caja">
+              <input type="number" id="maxFont" value="100" />
+              <span>px</span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="">
+          <legend>Viewport Range</legend>
+          <div class="cuadro">
+            <label for="minViewport" class="">Min. Viewport Width:</label>
+            <div class="caja">
+              <input type="number" id="minViewport" value="600" />
+              <span>px</span>
+            </div>
+          </div>
+
+          <div class="cuadro">
+            <label for="maxViewport" class="">Max. Viewport Width:</label>
+            <div class="caja">
+              <input type="number" id="maxViewport" value="1400" />
+              <span>px</span>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="output">
+        <strong>Format:</strong>
+        <code id="clampOutput"></code>
+        <button id="copyBtn" aria-label="Copiar expresión">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-copy"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
+            ></path><path
+              d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
+            ></path></svg
+          >
+        </button>
+      </div>
+    </footer>
+  </article>
+</Section>
+
+<style>
+  @import "tailwindcss";
+  @plugin '@midudev/tailwind-animations';
+  /* General CSS */
+  .marco {
+    @apply grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 font-[family-name:var(--font-body)] text-white/85;
+    fieldset {
+      @apply grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-2 border border-orange-400/10 rounded-lg p-2;
+      legend {
+        @apply font-semibold text-xl tracking-tighter text-pretty text-[clamp(1rem,0.9659rem_+_0.1818vw,1.125rem)] px-2 ml-2 text-shadow-[0_0_8px_rgba(var(--primary),0.15)];
+      }
+      .cuadro {
+        @apply flex flex-col gap-1;
+        label {
+          @apply text-sm font-semibold tracking-tighter text-pretty text-white/65;
+        }
+        .caja {
+          @apply flex items-center gap-1 px-4 py-2 border border-white/10 rounded-lg;
+          input {
+            @apply w-full text-right text-white/65 font-[family-name:var(--font-mono)] text-pretty text-xl;
+          }
+          span {
+            @apply text-white/45 font-semibold tracking-tighter text-sm;
+          }
+        }
+      }
+    }
+  }
+  .output {
+    @apply flex items-start sm:items-center gap-2 w-full px-2 mt-4 relative;
+    strong {
+      @apply text-base font-bold tracking-tighter w-fit text-white/65 text-shadow-[0_0_8px_rgba(var(--light),0.25)];
+    }
+    code {
+      @apply w-full h-auto min-h-8 bg-stone-200/10 text-orange-400/85 font-[family-name:var(--font-mono)] text-pretty text-sm  rounded-lg block text-left p-2;
+    }
+    button {
+      @apply bg-white/5 text-orange-400/65 size-9 flex items-center justify-center border border-orange-400/25 px-2 rounded-lg cursor-pointer;
+    }
+  }
+</style>
+
+<script is:inline>
+  const inputs = document.querySelectorAll("input");
+  const output = document.getElementById("clampOutput");
+  const copyBtn = document.getElementById("copyBtn");
+
+  function generateClamp() {
+    const minFont = parseFloat(document.getElementById("minFont").value);
+    const maxFont = parseFloat(document.getElementById("maxFont").value);
+    const minVP = parseFloat(document.getElementById("minViewport").value);
+    const maxVP = parseFloat(document.getElementById("maxViewport").value);
+    const base = 16;
+
+    const minFontRem = minFont / base;
+    const maxFontRem = maxFont / base;
+    const slope = ((maxFontRem - minFontRem) / (maxVP - minVP)) * 100;
+    const yAxis = minFontRem - (slope * minVP) / 100;
+
+    const clampStr = `clamp(${minFontRem}rem, ${yAxis.toFixed(4)}rem + ${slope.toFixed(4)}vw, ${maxFontRem}rem)`;
+
+    output.textContent = `font-size: ${clampStr};`;
+  }
+  function copyToClipboard() {
+    const text = output.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = copyBtn.innerHTML;
+      copyBtn.innerHTML =
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#28a745" d="M9 16.2l-3.5-3.5L4 14.2l5 5L20 8.2l-1.4-1.4z"/></svg>';
+      setTimeout(() => {
+        copyBtn.innerHTML = original;
+      }, 1500);
+    });
+  }
+
+  inputs.forEach((input) => input.addEventListener("input", generateClamp));
+  copyBtn.addEventListener("click", copyToClipboard);
+
+  generateClamp();
+</script>

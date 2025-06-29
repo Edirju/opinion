@@ -1,0 +1,16 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import FontClamp from "@/components/tools/FontClamp.astro";
+import ColorConverter from "@/components/tools/ColorConverter.astro";
+import Footer from "@/components/Footer.astro";
+
+import { basics } from "@/data/landing.json";
+const { name, label } = basics;
+---
+<Layout title={`Herramientas gratuitas de ${name} • ${label}`}>
+  <Header />
+  <FontClamp />
+  <ColorConverter />
+  <Footer />
+</Layout>

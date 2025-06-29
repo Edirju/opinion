@@ -6,15 +6,15 @@ import Proyectos from "../components/sections/Proyectos.astro";
 import Footer from "../components/Footer.astro";
 import Data from "../icons/Data.astro";
 
-import { basics } from '../data/landing.json'
-const { name, label } = basics
+import { basics } from "../data/landing.json";
+const { name, label } = basics;
 ---
 
 <Layout title={`Galería de Proyectos de ${name} • ${label}`}>
   <Header />
   <Section>
     <article
-      class="text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)] flex flex-col gap-4"
+      class="text-orange-400/85 font-[family-name:var(--body)] flex flex-col gap-4 animate-fade-in-right"
     >
       <header class="flex flex-col gap-2">
         <h2
@@ -23,10 +23,9 @@ const { name, label } = basics
           <Data /><span class="font-extralight opacity-45">|</span> Posts publicados.
         </h2>
         <p
-          class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.45)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
+          class="text-sm font-extralight text-pretty tracking-tight text-white/65 [&>strong]:text-orange-400/65 [&>strong]:font-medium"
         >
-          Los pequeños detalles marcan una gran diferencia. Con los años he
-          aprendido a fijarme en esos detalles. <strong>Aprender++</strong>.
+          Cada <strong>proyecto</strong> refleja atención al detalle y <strong>aprendizaje</strong> constante. <strong>Impacto.</strong>
         </p>
       </header>
     </article>
@@ -34,3 +33,8 @@ const { name, label } = basics
   <Proyectos />
   <Footer />
 </Layout>
+
+<style>
+  @import "tailwindcss";
+  @plugin "@midudev/tailwind-animations";
+</style>

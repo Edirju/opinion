@@ -9,30 +9,24 @@ const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 ---
 
-<a
-  href={href}
-  class:list={[className, { active: isActive }]}
-  {...props}  
->
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
   <slot />
 </a>
 
 <style>
+  @import "tailwindcss";
+  @plugin '@midudev/tailwind-animations';
   a {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
+    @apply flex items-center gap-1;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     &:hover {
-      color: rgb(var(--primary), 0.65);
-      text-shadow: 0 0 0.5rem rgb(var(--primary), 0.65);
+      @apply text-orange-400/65;
+      text-shadow: 0 0 0.5rem rgb(var(--primary), 0.45);
     }
     &.active {
-      color: rgb(var(--primary), 0.65);
-      text-shadow: 0 0 8px rgb(var(--primary), 0.65);
-      /* text-decoration: underline; */
-      /* text-underline-offset: 4px; */
+      @apply text-orange-400/65;
+      text-shadow: 0 0 8px rgb(var(--primary), 0.45);
     }
   }
 </style>

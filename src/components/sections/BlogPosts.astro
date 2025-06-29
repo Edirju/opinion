@@ -21,24 +21,25 @@ if (postsToShow.length === 0) {
 
 <Section>
   <header
-    class="flex flex-col gap-2 text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)]"
+    class="flex flex-col gap-2 text-orange-400/85 font-[family-name:var(--body)] animate-fade-in-up"
   >
     <h2
       class="flex items-center gap-1 capitalize font-bold text-pretty tracking-tight text-[clamp(1.125rem,1.0909rem_+_0.1818vw,1.25rem)]"
     >
-      <Spreadsheet /><span class="font-extralight opacity-45">|</span> Publicaciones
+      <Spreadsheet /><span class="font-extralight text-orange-400/45">|</span> Publicaciones
       recientes:
     </h2>
     <p
-      class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.45)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
+      class="text-sm font-extralight text-pretty tracking-tight text-white/65 [&>strong]:text-orange-400/65 [&>strong]:font-medium"
     >
-      Los pequeños detalles marcan una gran diferencia. Con los años he
-      aprendido a fijarme en esos detalles. <strong>Aprender++</strong>.
+      Un espacio para el análisis profundo, lejos del ruido y la inmediatez. <strong
+        >Aprendizaje continuo+.</strong
+      > Aquí las ideas respiran.
     </p>
   </header>
 
   <article
-    class="blog-slider-container mt-6 font-[family-name:var(--body)] text-[rgb(var(--light),0.65)] flex flex-col gap-4 p-4 bg-linear-to-tr from-[rgb(var(--secondary),0.45)] via-[rgb(var(--dark),0.45)] to-[rgb(var(--black),0.45)] border border-[rgb(var(--primary),0.1)] shadow-[0_4px_30px_rgb(var(--primary),0.08)] rounded-xl"
+    class="blog-slider-container mt-6 font-[family-name:var(--body)] text-white/65 flex flex-col gap-4 p-4 bg-linear-to-tr from-gray-900/45 via-zinc-800/45 to-neutral-900/45 border border-orange-400/20 shadow-[0_4px_30px_rgb(var(--primary),0.08)] rounded-xl animate-fade-in-up"    
   >
     <div
       class="slider-wrapper flex overflow-auto scroll-smooth snap-x-[mandatory]"
@@ -53,14 +54,14 @@ if (postsToShow.length === 0) {
             >
               <div class="slide-content flex flex-col gap-4 md:w-1/2">
                 <div class="text-title flex items-center gap-4">
-                  <h3 class="slide-title font-medium text-xl text-pretty line-clamp-1 tracking-tighter text-[rgb(var(--light),0.55)] w-fit leading-tight relative text-shadow-[0_0_8px_rgb(var(--accent),0.65)] hover:text-[rgb(var(--primary),0.65)]">
+                  <h3 class="slide-title font-medium text-xl text-pretty line-clamp-1 tracking-tighter text-white/55 w-fit leading-tight relative text-shadow-[0_0_8px_rgb(var(--accent),0.65)] hover:text-orange-400/65 transition">
                     {post.data.title}
                   </h3>
-                  <time class="slide-date border border-[rgb(var(--primary),0.25)] rounded px-1 text-xs uppercase tracking-tighter text-[rgb(var(--light),0.35)] bg-[rgb(var(--accent),0.20)] font-[family-name:var(--mono)] text-nowrap">
+                  <time class="slide-date border border-orange-400/25 rounded px-1 text-xs uppercase tracking-tighter text-white/45 bg-[rgb(var(--accent),0.20)] font-[family-name:var(--mono)] text-nowrap">
                     <FormattedDate date={post.data.pubDate} />
                   </time>
                 </div>
-                <p class="font-extralight text-balance text-[rgb(var(--light),0.35)] tracking-wide leading-tight text-sm">
+                <p class="font-extralight text-balance text-white/45 tracking-wider leading-tight text-sm">
                   {post.data.description}
                 </p>
               </div>
@@ -71,7 +72,7 @@ if (postsToShow.length === 0) {
                     height={360}
                     src={post.data.heroImage}
                     alt={post.data.title}
-                    class='rounded-md'
+                    class="rounded-md"
                   />
                 )}
               </figure>
@@ -98,6 +99,8 @@ if (postsToShow.length === 0) {
 </Section>
 
 <style>
+  @import "tailwindcss";
+  @plugin "@midudev/tailwind-animations";
   .slider-wrapper::-webkit-scrollbar {
     /* WebKit */
     display: none;

@@ -5,19 +5,18 @@ import Cog from "../../icons/Cog.astro";
 
 <Section>
   <article
-    class="text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)] flex flex-col gap-4"
+    class="text-orange-400/85 font-[family-name:var(--body)] flex flex-col gap-4"
   >
     <header class="flex flex-col gap-2">
       <h2
         class="flex items-center gap-1 capitalize font-bold text-pretty tracking-tight text-[clamp(1.125rem,1.0909rem_+_0.1818vw,1.25rem)]"
       >
-        <Cog /><span class="font-extralight opacity-45">|</span> Skills.
+        <Cog /><span class="font-extralight text-orange-300/45">|</span> Skills.
       </h2>
       <p
-        class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.45)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
+        class="text-sm font-extralight text-pretty tracking-tight text-white/65 [&>strong]:text-orange-400/65 [&>strong]:font-medium"
       >
-        Los pequeños detalles marcan una gran diferencia. Con los años he
-        aprendido a fijarme en esos detalles. <strong>Aprender++</strong>.
+        Mentalidad analítica orientada al detalle y con gran iniciativa de aprendizaje. <strong class="capitalize">Atención al detalle.</strong>
       </p>
     </header>
 
@@ -692,8 +691,11 @@ import Cog from "../../icons/Cog.astro";
 </Section>
 
 <style>
-  article{
-    animation: fade-in-right .8s ease-in-out;
+  @import "tailwindcss";
+  @plugin "@midudev/tailwind-animations";
+
+  article {
+    @apply animate-fade-in-up ;
   }
   .stock-ticker {
     color: rgb(var(--light), 0.65);

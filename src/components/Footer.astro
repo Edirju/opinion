@@ -9,10 +9,16 @@ const today = new Date();
 ---
 
 <Section>
-  <footer class="font-[family-name:var(--heading)] font-light text-center text-[rgb(var(--light),0.45)]">
+  <footer
+    class="font-[family-name:var(--heading)] font-light text-center text-white/55 animate-fade-in-right"
+  >
     <header class="flex flex-col gap-1 tracking-tight">
-      <h3 class="text-sm text-shadow-[0_0_8px_rgb(var(--primary),0.45)] capitalize">Edinson Rivera • Desarrollo Web • Gestión Social Media</h3>
-      <p class="text-xs tracking-wide font-extralight opacity-45 capitalize">
+      <h3
+        class="text-sm text-shadow-[0_0_8px_rgb(var(--primary),0.45)] capitalize"
+      >
+        Edinson Rivera • Desarrollo Web • Gestión Social Media
+      </h3>
+      <p class="text-xs tracking-wide font-extralight text-white/35 capitalize">
         &copy; {today.getFullYear()} @edirju. Todos los derechos reservados.
       </p>
     </header>
@@ -52,16 +58,18 @@ const today = new Date();
 </Section>
 
 <style>
-	.social-links{
-		a{
-			text-decoration: none;
-			transition-property: transform, color;
-			transition-duration: 0.3s, 0.5s;
-			transition-delay: 0s, 0.1s;
-			&:hover{
-				transform: scale(1.2) rotate(360deg);
-				color: rgb(var(--primary));
-			}
-		}
-	}
+  @import "tailwindcss";
+  @plugin "@midudev/tailwind-animations";
+  .social-links {
+    a {
+      text-decoration: none;
+      transition-property: transform, color;
+      transition-duration: 0.3s, 0.5s;
+      transition-delay: 0s, 0.1s;
+      &:hover {
+        transform: scale(1.2) rotate(360deg);
+        color: rgb(var(--primary));
+      }
+    }
+  }
 </style>
