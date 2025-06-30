@@ -88,11 +88,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <style>
   :root {
     --hdr-gradient: linear-gradient(
-      to top left in oklch,
-      oklch(0.1824 0.0152 266.74) 0%,
-      oklch(0.2607 0.0166 248.46) 100%
+      to bottom right in oklch,
+      oklch(0.2172 0.0302 261.27) 0%,
+      60%,
+      oklch(0.1913 0 0) 100%
     );
-    --sdr-gradient: linear-gradient(to top left, #0f1219 0%, #1e252c 100%);
+    --sdr-gradient: linear-gradient(
+      to bottom right,
+      #121a28 0%,
+      60%,
+      #141414 100%
+    );
+
     background: var(--hdr-gradient);
   }
   footer {
@@ -173,137 +180,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     }
     hr {
       border: none;
-      border-top: 1px solid rgb(var(--dark),0.65);
+      border-top: 1px solid rgb(var(--dark), 0.65);
     }
   }
 </style>
-<!-- <html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
-
-  <body>
-    <main class="min-h-[100dvh] relative">
-      <div
-        class="absolute inset-0 -z-10 h-full w-full bg-transparent bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_14px]"
-      >
-        <div
-          class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-[rgb(var(--primary))] opacity-20 blur-[100px]"
-        >
-        </div>
-      </div>
-      <Header />
-      <Section>
-        <article>
-          <div class="hero-image">
-            {
-              heroImage && (
-                <Image
-                  width={1020}
-                  height={510}
-                  src={heroImage}
-                  alt=""                  
-                />
-              )
-            }
-          </div>
-          <div class="prose">
-            <div class="title">
-              <div class="date">
-                <FormattedDate date={pubDate} />
-                {
-                  updatedDate && (
-                    <div class="last-updated-on">
-                      Last updated on <FormattedDate date={updatedDate} />
-                    </div>
-                  )
-                }
-              </div>
-              <h1 class="">
-                {title}
-              </h1>
-              <hr />
-            </div>
-            <div class="text-pretty">
-              <slot />
-            </div>
-          </div>
-        </article>
-      </Section>
-    </main>
-    <Footer />
-  </body>
-</html>
-
-<style>
-  :root {
-    --hdr-gradient: linear-gradient(
-      to top left in oklch,
-      oklch(0.1824 0.0152 266.74) 0%,
-      oklch(0.2607 0.0166 248.46) 100%
-    );
-    --sdr-gradient: linear-gradient(to top left, #0f1219 0%, #1e252c 100%);
-    background: var(--hdr-gradient);
-  }
-  main {
-    font-family: var(--body);
-    margin: 0;
-  }
-  .hero-image {
-    width: 100%;
-  }
-  .hero-image img {
-    display: block;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: var(--box-shadow);
-  }
-  .prose {
-    width: 700px;
-    max-width: calc(100% - 1em);
-    margin: auto;
-    padding: 0.5em;
-    color: rgb(var(--light), 0.85);
-  }
-  .title {
-    margin-bottom: 1em;
-    padding: 1em 0;
-    text-align: center;
-    line-height: 1;
-  }
-  .title h1 {
-    color: rgb(var(--primary), 0.85);
-    text-shadow: 0 0 0.5em rgb(var(--accent), 0.65);
-  }
-  .date {
-    margin-bottom: 0.25em;
-    color: rgb(var(--light), 0.45);
-  } 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0 0 0.5rem 0;    
-    line-height: 1.2;
-  }
-  h1 {
-    font-size: 48px;
-  }
-  h2 {
-    font-size: 40px;
-  }
-  h3 {
-    font-size: 32px;
-  }
-  h4 {
-    font-size: 24px;
-  }
-  h5 {
-    font-size: 20px;
-  }
-  .last-updated-on {
-    font-style: italic;
-  }
-  </style> -->

@@ -8,15 +8,15 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
 
 <Section>
   <section
-    class="text-[rgb(var(--light),0.85)] font-[family-name:var(--body)] columns-1 md:columns-3 gap-4 mx-auto animate-fade-in-up"
+    class="text-white/85 font-[family-name:var(--body)] columns-1 md:columns-3 gap-4 mx-auto animate-fade-in-up"
   >
     <article
-      class="border border-[rgb(var(--primary),0.25)] rounded-lg min-h-60 items-center bg-linear-to-br from-[rgb(var(--primary),0.35)] via-[rgb(var(--dark),0.35)] to-[rgb(var(--accent),0.35)] break-inside-avoid"
+      class="border border-orange-400/25 rounded-lg min-h-60 items-center bg-linear-to-tr from-gray-900/65 via-zinc-800/65 to-neutral-900/65 break-inside-avoid shadow-[0_0_8px_rgba(var(--primary),0.15)]"
     >
       <a
         href="#"
         rel="noopener noreferrer"
-        class="group hover:scale-105 transition-all duration-300 ease-in-out flex flex-col h-full place-items-center pt-8 text-center font-extralight hover:text-[rgb(var(--primary),0.85)] tracking-tighter"
+        class="group hover:scale-105 transition-all duration-300 ease-in-out flex flex-col h-full place-items-center pt-8 text-center font-extralight hover:text-white tracking-tighter"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
           ></path>
         </svg>
         Próximamente en <strong
-          class="text-[rgb(var(--accent),0.85)] font-[family-name:var(--mono)] text-xl"
+          class="text-orange-800/85 font-[family-name:var(--mono)] text-xl"
           >Github</strong
         ><br /> siguiente proyecto...
       </a>
@@ -39,12 +39,12 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
         const num = `${index + 1}`.padStart(2, "0");
 
         return (
-          <article class="break-inside-avoid relative my-4 border border-[rgb(var(--primary),0.15)] rounded-lg items-center  bg-linear-to-tr from-[rgb(var(--dark),0.65)] via-[rgb(var(--accent),0.15)] to-[rgb(var(--secondary),0.65)]">
+          <article class="break-inside-avoid relative my-4 border border-orange-400/25 rounded-lg items-center  bg-linear-to-tr from-gray-900/65 via-zinc-800/65 to-neutral-900/65">
             <a
               href={`/${project.slug}`}
               class="group hover:scale-105 block transition"
             >
-              <span class="group-hover:scale-[2] transition-all group-hover:top-4 group-hover:left-6 opacity-75 group-hover:opacity-100 absolute top-4 left-4 -rotate-12 text-2xl font-bold tracking-tighter text-[rgb(var(--primary),0.85)] z-10">
+              <span class="group-hover:scale-[2] transition-all group-hover:top-4 group-hover:left-6 opacity-75 group-hover:opacity-100 absolute top-4 left-4 -rotate-12 text-2xl font-bold tracking-tighter text-white/85 z-10">
                 #{num}
               </span>
               <img
@@ -53,20 +53,20 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
                 class="rounded-lg w-full overflow-hidden object-cover aspect-video transition-all duration-300 ease-in-out"
               />
               <div class="p-2.5">
-                <h2 class="text-[rgb(var(--primary),0.85)]">
+                <h2 class="text-orange-400/85">
                   <a
                     href={`/${project.slug}`}
-                    class="text-[clamp(1.125rem,1.0313rem_+_0.25vw,1.25rem)] font-medium font-[family-name:var(--heading)] tracking-tight text-pretty text-shadow-[0_0_0.5rem_rgb(var(--accent),0.55)] hover:text-[rgb(var(--light),0.85)] hover:underline hover:underline-offset-2 transition-all duration-300 ease-in-out"
+                    class="text-[clamp(1.125rem,1.0313rem_+_0.25vw,1.25rem)] font-medium font-[family-name:var(--heading)] tracking-tight text-pretty text-shadow-[0_0_0.5rem_rgb(var(--accent),0.55)] hover:text-white/85 hover:underline hover:underline-offset-2 transition-all duration-300 ease-in-out"
                   >
                     {project.title}
                   </a>
                 </h2>
-                <p class="text-xs font-extralight text-pretty tracking-tight opacity-60 font-[family-name:var(--mono)]">
+                <p class="text-xs font-extralight text-pretty tracking-tight text-white/65 font-[family-name:var(--mono)]">
                   {project.description}
                 </p>
                 <ul class="inline-flex flex-wrap gap-1 mb-2">
                   {project.learnings.map((learning) => (
-                    <li class="text-[10px] font-light font-[family-name:var(--mono)] bg-[rgb(var(--secondary),0.85)] text-[rgb(var(--primary),0.45)] rounded-full px-1.5">
+                    <li class="text-[10px] font-light font-[family-name:var(--mono)] bg-[rgb(var(--secondary),0.85)] text-white/35 rounded-full px-1.5 border border-orange-400/35">
                       {learning}
                     </li>
                   ))}
@@ -78,7 +78,7 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
                       href={`https://github.com/Edirju/opinion/tree/main/public/projects/${project.slug}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex gap-0.5 items-center justify-center bg-[rgb(var(--light),0.85)] text-[rgb(var(--dark),0.85)] rounded-full text-xs text-center px-1.5 py-0.5 font-[family-name:var(--mono)] transition hover:bg-[rgb(var(--black))] hover:text-[rgb(var(--light),0.85)] uppercase"
+                      class="inline-flex gap-0.5 items-center justify-center bg-white/85 text-gray-900/85 rounded-full text-xs text-center px-1.5 py-0.5 font-[family-name:var(--mono)] transition hover:bg-black hover:text-orange-400"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -88,13 +88,13 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
                       >
                         <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z" />
                       </svg>
-                      Code
+                      Código
                     </a>
                   </li>
                   <li>
                     <a
                       href={`/${project.slug}`}
-                      class="inline-flex gap-0.5 items-center justify-center bg-[rgb(var(--accent),0.85)] text-[rgb(var(--light),0.85)] rounded-full text-xs text-center px-1.5 py-0.5 font-[family-name:var(--mono)] transition hover:bg-[rgb(var(--black))] hover:text-[rgb(var(--accent),0.85)] uppercase"
+                      class="inline-flex gap-0.5 items-center justify-center bg-orange-800/85 text-white/85 rounded-full text-xs text-center px-1.5 py-0.5 font-[family-name:var(--mono)] transition hover:bg-black hover:text-orange-400"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const finalProjects = PROJECTS.filter((project) => !project.hidden)
                       >
                         <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9.71002 19.6674C8.74743 17.6259 8.15732 15.3742 8.02731 13H4.06189C4.458 16.1765 6.71639 18.7747 9.71002 19.6674ZM10.0307 13C10.1811 15.4388 10.8778 17.7297 12 19.752C13.1222 17.7297 13.8189 15.4388 13.9693 13H10.0307ZM19.9381 13H15.9727C15.8427 15.3742 15.2526 17.6259 14.29 19.6674C17.2836 18.7747 19.542 16.1765 19.9381 13ZM4.06189 11H8.02731C8.15732 8.62577 8.74743 6.37407 9.71002 4.33256C6.71639 5.22533 4.458 7.8235 4.06189 11ZM10.0307 11H13.9693C13.8189 8.56122 13.1222 6.27025 12 4.24799C10.8778 6.27025 10.1811 8.56122 10.0307 11ZM14.29 4.33256C15.2526 6.37407 15.8427 8.62577 15.9727 11H19.9381C19.542 7.8235 17.2836 5.22533 14.29 4.33256Z" />
                       </svg>
-                      Demo
+                      Preview
                     </a>
                   </li>
                 </ul>
