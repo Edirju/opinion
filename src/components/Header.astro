@@ -15,9 +15,11 @@ import Logo from "../icons/Logo.astro";
         <Logo class="" />
       </figure>
       <h2
-        class="text-2xl font-medium tracking-tighter sm:pr-1 sm:border-r sm:border-[rgb(var(--primary),0.25)]"
+        class="text-2xl font-semibold tracking-tighter sm:pr-1 sm:border-r sm:border-[rgb(var(--primary),0.25)]"
       >
-        untaledinson.
+        un<span class="font-extralight">_</span>tal<span class="font-extralight"
+          >_</span
+        >edi!
       </h2>
     </a>
     <nav
@@ -37,7 +39,7 @@ import Logo from "../icons/Logo.astro";
             d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z"></path>
         </svg>
         <span
-          class="text-sm font-light uppercase tracking-tight hidden md:block"
+          class="span-link text-sm font-light uppercase tracking-tight hidden md:block"
         >
           Blog
         </span>
@@ -57,7 +59,7 @@ import Logo from "../icons/Logo.astro";
           ></path></svg
         >
         <span
-          class="text-sm font-light uppercase tracking-tight hidden md:block"
+          class="span-link text-sm font-light uppercase tracking-tight hidden md:block"
           >Proyectos</span
         >
       </HeaderLink>
@@ -74,7 +76,7 @@ import Logo from "../icons/Logo.astro";
           ></path></svg
         >
         <span
-          class="text-sm font-light uppercase tracking-tight hidden md:block"
+          class="span-link text-sm font-light uppercase tracking-tight hidden md:block"
           >Tools</span
         >
       </HeaderLink>
@@ -91,7 +93,7 @@ import Logo from "../icons/Logo.astro";
           ></path></svg
         >
         <span
-          class="text-sm font-light uppercase tracking-tight hidden md:block"
+          class="span-link text-sm font-light uppercase tracking-tight hidden md:block"
           >Resume</span
         >
       </HeaderLink>
@@ -105,11 +107,11 @@ import Logo from "../icons/Logo.astro";
 
   header {
     @apply text-white/55 font-[family-name:var(--body)] sticky top-0 z-20 bg-[rgb(var(--black),0.20)] backdrop-blur-md backdrop-saturate-150 shadow-[0_0_25px_rgb(var(--black),0.45)] w-full bg-linear-to-br from-[rgb(var(--dark),0.20)] via-[rgb(var(--primary),0.05)] to-[rgb(var(--black),0.20)] border-b border-[rgb(var(--primary),0.05)] mb-[36px] md:mb-[56px];
-    section{
+    section {
       @apply max-w-[700px] p-4 md:px-0 flex flex-row flex-wrap items-center justify-between md:mx-auto;
     }
   }
-  span {
+  .span-link {
     position: relative;
     transition: all 0.3s ease;
     &::after {
@@ -127,5 +129,5 @@ import Logo from "../icons/Logo.astro";
     &:hover::after {
       transform: scaleX(1);
     }
-  }  
+  }
 </style>

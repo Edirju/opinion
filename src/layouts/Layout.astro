@@ -17,12 +17,19 @@ const description = SITE_DESCRIPTION;
     <style>
       :root {
         --hdr-gradient: linear-gradient(
-          to top left in oklch,
-          oklch(0.1824 0.0152 266.74) 0%,
-          oklch(0.2607 0.0166 248.46) 100%
+          to bottom right in oklch,
+          oklch(0.2172 0.0302 261.27) 0%,
+          60%,
+          oklch(0.1913 0 0) 100%
         );
-        --sdr-gradient: linear-gradient(to top left, #0f1219 0%, #1e252c 100%);
-        background: var(--hdr-gradient);        
+        --sdr-gradient: linear-gradient(
+          to bottom right,
+          #121a28 0%,
+          60%,
+          #141414 100%
+        );
+
+        background: var(--hdr-gradient);
       }
     </style>
   </head>
