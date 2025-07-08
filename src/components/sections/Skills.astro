@@ -5,16 +5,18 @@ import Cog from "../../icons/Cog.astro";
 
 <Section>
   <article
-    class="text-orange-400/85 font-[family-name:var(--body)] flex flex-col gap-4"
+    class="text-[rgb(var(--primary),0.85)] font-[family-name:var(--body)] flex flex-col gap-4"
   >
     <header class="flex flex-col gap-2">
       <h2
         class="flex items-center gap-1 capitalize font-bold text-pretty tracking-tight text-[clamp(1.125rem,1.0909rem_+_0.1818vw,1.25rem)]"
       >
-        <Cog /><span class="font-extralight text-orange-300/45">|</span> Skills.
+        <Cog /><span class="font-extralight text-[rgb(var(--primary),0.45)]"
+          >|</span
+        > Skills.
       </h2>
       <p
-        class="text-sm font-extralight text-pretty tracking-tight text-white/65 [&>strong]:text-orange-400/65 [&>strong]:font-medium"
+        class="text-sm font-extralight text-pretty tracking-tight text-[rgb(var(--light),0.65)] [&>strong]:text-[rgb(var(--primary),0.65)] [&>strong]:font-medium"
       >
         Mentalidad analítica orientada al detalle y con gran iniciativa de
         aprendizaje. <strong class="capitalize">Atención al detalle.</strong>
@@ -737,8 +739,8 @@ import Cog from "../../icons/Cog.astro";
         border-box;
     border: 2px solid transparent;
     span {
-      @apply font-light uppercase tracking-tighter;
-      font-size: clamp(0.75rem, 0.713rem + 0.1852vw, 0.875rem);
+      @apply font-light uppercase tracking-tight;
+      font-size: clamp(.75rem, 0.713rem + 0.1852vw, 0.875rem);
     }
   }
   .company,

@@ -10,7 +10,7 @@ const today = new Date();
 
 <Section>
   <footer
-    class="font-[family-name:var(--heading)] font-light text-center text-white/55 animate-fade-in-right"
+    class="font-[family-name:var(--heading)] font-light text-center text-[rgb(var(--light),0.65)] animate-fade-in-right"
   >
     <header class="flex flex-col gap-1 tracking-tight">
       <h3
@@ -18,7 +18,9 @@ const today = new Date();
       >
         Edinson Rivera • Desarrollo Web • Gestión Social Media
       </h3>
-      <p class="text-xs tracking-wide font-extralight text-white/35 capitalize">
+      <p
+        class="text-xs tracking-wide font-extralight text-[rgb(var(--light),0.35)] capitalize"
+      >
         &copy; {today.getFullYear()} @edirju. Todos los derechos reservados.
       </p>
     </header>
@@ -68,7 +70,7 @@ const today = new Date();
       transition-delay: 0s, 0.1s;
       &:hover {
         transform: scale(1.2) rotate(360deg);
-        color: rgb(var(--primary));
+        color: rgb(var(--primary),0.85);
       }
     }
   }
